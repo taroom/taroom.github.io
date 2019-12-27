@@ -29,3 +29,46 @@ sudo apt install sublime-text
 ```
 
 install teamviewer
+-download di website teamviewer
+
+install composer
+```
+sudo apt install composer
+```
+
+install nodejs
+```
+sudo apt install nodejs
+```
+
+install npm
+```
+sudo apt install npm
+```
+
+install bower
+```
+sudo npm install -g bower
+```
+
+[setting virtual host](../apache2/setting-domain-local.md)
+
+install git
+```
+sudo apt install git
+```
+
+connect to gitlab with ssh
+```
+- buat key baru
+ssh-keygen -t rsa
+
+- output file key.pub
+cat /filepub_rsa
+
+- copykan string ke gitlab
+```
+coba git clone kesalah satu contoh project
+
+ketikkan composer install -vvv
+
