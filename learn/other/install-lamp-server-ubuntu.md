@@ -20,7 +20,7 @@ sudo mysql -u root -p
 
 lalu ikuti panduan ini untuk membuat user baru
 
-[](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
+[buat user mysql](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
 
 installing sublimetext 3
 
