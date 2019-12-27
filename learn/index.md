@@ -1,5 +1,9 @@
 # Belajar Penggunaan
 
+## Installing Server
+
+* [Installing LAMP Server on New Installation Ubuntu](other/install-lamp-server-ubuntu.md)
+
 ## Apache2
 
 * [Setting Cors](apache2/setting-cors-for-website.md)
