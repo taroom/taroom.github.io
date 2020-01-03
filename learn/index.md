@@ -14,3 +14,6 @@
 ## MySQL 
 
 
+## Laravel
+* [1st Guide in laravel](laravel/first-guide-in-laravel.md)
+* [laravel auth guide](laravel/laravel-6-auth.md)
