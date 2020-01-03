@@ -7,5 +7,9 @@ composer require laravel/ui --dev -vvv
 
 php artisan ui vue --auth
 
+atau
+
+php artisan ui bootstrap --auth
+
 npm install && npm run dev
 ```
