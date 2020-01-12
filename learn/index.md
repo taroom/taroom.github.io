@@ -20,3 +20,7 @@
 
 ## Git BARE
 * [GIT Bare vps](other/git-bare-implementation.md)
+
+## YII 2
+* [Yii2 Requirement PHP](yii2/requirement.md)
+* [Yii2 installing yii2 from git bare](yii2/installing-yii2-git-bare.md)
