@@ -8,7 +8,7 @@
 
 * [Setting Cors](apache2/setting-cors-for-website.md)
 * [Setting domain lokal](apache2/setting-domain-local.md)
-
+* [Ganti Mesin PHP (multiphp installation)](apache2/php-cli-alternate.md)
 ## PHP 7up
 
 ## MySQL 
