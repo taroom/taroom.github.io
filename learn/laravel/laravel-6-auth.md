@@ -12,4 +12,14 @@ atau
 php artisan ui bootstrap --auth
 
 npm install && npm run dev
+
+setelah itu jika belum melakukan proses db apapun silahkan untuk membuat database misalkan todo
+
+nah setelah itu atur konfigurasi database di file .enc
+
+setelah itu lakukan ini lewat terminal usahakan ada file artisan disitu kemudian proses dibawah ini akan membuat tabel-tabel yang diperlukan dalam proses autentifikasi
+
+php artisan migrate
 ```
+
+berikutnya anda dapat registrasi user pertama dan kemudian langsung masuk area dashboard (defaultnya seperti itu)
