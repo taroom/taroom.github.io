@@ -33,3 +33,13 @@ setelah selesai membangun fitur maka kita harus menggunakan cara
 git flow feature finish nama_fitur
 ex : git flow feature finish tombolbaru
 ```
+
+pertanyaan yang sedang dicari :
+* apakah kita bisa membuat 2 fitur bersamaan ?
+
+### release
+
+pertanyaan yang sedang dicari :
+* bagaimana cara untuk kembali ke branch develop, ketika banyak bug yang harus di perbaiki? dan bagaimana nasib branch releasenya?
+
+### hotfix
