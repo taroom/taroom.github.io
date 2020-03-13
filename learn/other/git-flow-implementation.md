@@ -79,3 +79,6 @@ contoh penggunaan diterminal :
 gffs fitur_button
 gfff fitur_button
 ```
+
+### referensi
+* https://danielkummer.github.io/git-flow-cheatsheet/
