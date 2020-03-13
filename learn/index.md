@@ -18,8 +18,9 @@
 * [1st Guide in laravel](laravel/first-guide-in-laravel.md)
 * [laravel auth guide](laravel/laravel-6-auth.md)
 
-## Git BARE
-* [GIT Bare vps](other/git-bare-implementation.md)
+## Git
+* [GIT Bare vps implementation](other/git-bare-implementation.md)
+* [GIT flow implementation](other/git-flow-implementation.md)
 
 ## YII 2
 * [Yii2 Requirement PHP](yii2/requirement.md)
