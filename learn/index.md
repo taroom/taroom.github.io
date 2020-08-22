@@ -22,6 +22,7 @@
 ## Git
 * [GIT Bare vps implementation](other/git-bare-implementation.md)
 * [GIT flow implementation](other/git-flow-implementation.md)
+* [GIT Remove only on git folder](other/git-rm-cached.md)
 
 ## YII 2
 * [Yii2 Requirement PHP](yii2/requirement.md)
