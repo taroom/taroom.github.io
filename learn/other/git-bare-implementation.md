@@ -35,3 +35,10 @@ setelah itu cobalah untuk melakukan git push dari repo lokal ke repo vps
 ```
 git push live master
 ```
+
+untuk yang menggunakan non-bare biasanya akan ada error
+
+untuk bisa solved bisa pakai cara ini :
+```
+https://stackoverflow.com/questions/12265729/what-are-the-consequences-of-using-receive-denycurrentbranch-in-git
+```
