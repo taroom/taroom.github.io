@@ -18,6 +18,7 @@
 ## Laravel
 * [1st Guide in laravel](laravel/first-guide-in-laravel.md)
 * [laravel auth guide](laravel/laravel-6-auth.md)
+* [laravel auth guide with breeze](laravel/laravel-8-breeze-auth.md)
 
 ## Git
 * [GIT Bare vps implementation](other/git-bare-implementation.md)
