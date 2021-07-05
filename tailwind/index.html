@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Learning</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      mark {
+        background: orange;
+        color: inherit;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-1/2 p-3 mx-auto">
+      <h1 class="text-5xl text-center text-semibold">Pembelajaran TailWind</h1>
+
+      <input
+        type="text"
+        name="keyword"
+        class="border-2 mt-10 w-full p-3"
+        placeholder="cari..."
+      />
+
+      <table class="mt-5 border-2">
+        <thead>
+          <tr>
+            <th class="border-2 p-2">Judul</th>
+            <th class="border-2 p-2">Bahasa</th>
+            <th class="border-2 p-2">Platform</th>
+            <th class="border-2 p-2">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-2 p-2">
+              Build a Modern Landing Page With Tailwind CSS
+            </td>
+            <td class="border-2 p-2">Inggris</td>
+            <td class="border-2 p-2">Youtube</td>
+            <td class="border-2 p-2">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/00gyCtIQp8E"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border-2 p-2">Styling Forms with Tailwind CSS</td>
+            <td class="border-2 p-2">Inggris</td>
+            <td class="border-2 p-2">Youtube</td>
+            <td class="border-2 p-2">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/pONeWAzDsQg"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/g/jquery@2.2.4,bootstrap@3.3.6,mark.js@8.6.0(jquery.mark.min.js)"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(function () {
+        var $input = $("input[name='keyword']"),
+          $context = $("table tbody tr");
+        $input.on("input", function () {
+          var term = $(this).val();
+          $context.show().unmark();
+          if (term) {
+            $context.mark(term, {
+              done: function () {
+                $context.not(":has(mark)").hide();
+              },
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
