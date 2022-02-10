@@ -28,6 +28,7 @@
 - [GIT flow implementation](other/git-flow-implementation.md)
 - [GIT Remove only on git folder](other/git-rm-cached.md)
 - [GIT menampilkan history file secara visual](other/git-show-history-visually.md)
+- [GIT Clone](other/git-clone.md)
 
 ## YII 2
 
