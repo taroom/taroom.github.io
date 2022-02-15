@@ -10,10 +10,10 @@
 - [Setting domain lokal](apache2/setting-domain-local.md)
 - [Ganti Mesin PHP (multiphp installation)](apache2/php-cli-alternate.md)
 
-## PHP 7up
+## PHP 8up
 
 ## MySQL
-
+- [disable full groupby](mysql/disable-full-groupby.md)
 - [get column name on tables](mysql/column-n-tables.md)
 
 ## Laravel
@@ -38,3 +38,7 @@
 ## Flutter
 
 - [Flutter Intro](flutter/index.md)
+
+## Linux Terminal
+
+- [Chown n Chmod](other/linux-chown-chmod.md)
