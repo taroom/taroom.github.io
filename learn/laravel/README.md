@@ -1,5 +1,9 @@
-# CSS
+# Laravel Doom
 
-> Jika HTML itu batu bata, semen dan jendela, maka CSS adalah cat, ornamen, dekorasi.
+> Hidup lebih berwarna.
 
 - [CSS Framework](css-framework/bootstrap.md)
+
+## Guide Tutorial
+
+[Guide for first](guide.md)

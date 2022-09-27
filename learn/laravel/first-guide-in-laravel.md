@@ -55,3 +55,5 @@ php artisan serve --port 8001
 ## edit konfigurasi .env
 
 sesuaikan dengan konfigurasi koneksi database yang telah kita buat,
+
+[Selesai? Klik Disini](guide.md)
