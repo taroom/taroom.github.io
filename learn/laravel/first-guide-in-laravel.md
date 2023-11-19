@@ -58,7 +58,7 @@ sesuaikan dengan konfigurasi koneksi database yang telah kita buat,
 
 ## pentingnya scaffolding terlebih dahulu
 
-harus install scaffolding mau pakai laravel ui, breeze, atau jetstream
+harus install scaffolding mau pakai laravel ui, breeze, atau jetstream sebelum aplikasi dibuat dikarenakan route, controller akan di timpa. kejadian (2023-11-19 13:49:32)
 
 [kesini untuk laravel ui](guide-install-laravel-ui.md)<br>
 [kesini untuk laravel breeze](laravel-8-breeze-auth.md)
