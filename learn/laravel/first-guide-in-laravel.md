@@ -56,4 +56,11 @@ php artisan serve --port 8001
 
 sesuaikan dengan konfigurasi koneksi database yang telah kita buat,
 
+## pentingnya scaffolding terlebih dahulu
+
+harus install scaffolding mau pakai laravel ui, breeze, atau jetstream
+
+[kesini untuk laravel ui](guide-install-laravel-ui.md)<br>
+[kesini untuk laravel breeze](laravel-8-breeze-auth.md)
+
 [Selesai? Klik Disini](guide.md)

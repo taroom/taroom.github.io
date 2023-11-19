@@ -11,9 +11,13 @@ laravel new aplikasimu
 ```
 
 ## mengakses file .env di controller
+
 ## mengakses file .env di model
+
 ## mengakses file .env di view (blade)
 
 ```
 {{ env('nama_konfig') }}
 ```
+
+[selesai](guide.md)

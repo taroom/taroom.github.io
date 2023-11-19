@@ -39,3 +39,5 @@ Route::get('/preview/{id}', [LinkController::class, 'preview'])->name('link.prev
 
 4. Buat subdomain di hosting Anda. jika public folder untuk aplikasi laravel anda berada di public_html, isi document rootnya subdomain juga di public_html
 5. Selesai
+
+[selesai](guide.md)

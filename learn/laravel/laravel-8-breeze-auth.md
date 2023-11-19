@@ -1,7 +1,9 @@
 # Laravel Guide :: Autentikasi Otomatis menggunakan Laravel Breeze
+
 (petunjuk penginstallan dan penggunaan dasar laravel)
 
 untuk membuat sebuah halaman login dan register pada laravel 8 kita perlu mengerjakan perintah dibawah ini :
+
 ```
 laravel new projectbaru
 
@@ -19,3 +21,5 @@ npm run dev
 ```
 
 berikutnya anda dapat registrasi user pertama dan kemudian langsung masuk area dashboard (defaultnya seperti itu)
+
+[selesai](guide.md)
