@@ -1,959 +1,500 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Agus Sutarom</title>
+    <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Agus Sutarom | Programming Explorer</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
     />
-    <style>
-      .timeline_area {
-        position: relative;
-        z-index: 1;
-      }
-
-      .single-timeline-area {
-        position: relative;
-        z-index: 1;
-        padding-left: 180px;
-      }
-
-      @media only screen and (max-width: 575px) {
-        .single-timeline-area {
-          padding-left: 100px;
-        }
-      }
-
-      .single-timeline-area .timeline-date {
-        position: absolute;
-        width: 180px;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -ms-grid-row-align: center;
-        align-items: center;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
-        padding-right: 60px;
-      }
-
-      @media only screen and (max-width: 575px) {
-        .single-timeline-area .timeline-date {
-          width: 100px;
-        }
-      }
-
-      .single-timeline-area .timeline-date::after {
-        position: absolute;
-        width: 3px;
-        height: 100%;
-        content: "";
-        background-color: #ebebeb;
-        top: 0;
-        right: 30px;
-        z-index: 1;
-      }
-
-      .single-timeline-area .timeline-date::before {
-        position: absolute;
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-        background-color: #f1c40f;
-        content: "";
-        top: 50%;
-        right: 26px;
-        z-index: 5;
-        margin-top: -5.5px;
-      }
-
-      .single-timeline-area .timeline-date p {
-        margin-bottom: 0;
-        color: #020710;
-        font-size: 13px;
-        text-transform: uppercase;
-        font-weight: 500;
-      }
-
-      .single-timeline-area .single-timeline-content {
-        position: relative;
-        z-index: 1;
-        padding: 30px 30px 25px;
-        border-radius: 6px;
-        margin-bottom: 15px;
-        margin-top: 15px;
-        -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
-        box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
-        border: 1px solid #ebebeb;
-      }
-
-      @media only screen and (max-width: 575px) {
-        .single-timeline-area .single-timeline-content {
-          padding: 20px;
-        }
-      }
-
-      .single-timeline-area .single-timeline-content .timeline-icon {
-        -webkit-transition-duration: 500ms;
-        transition-duration: 500ms;
-        width: 30px;
-        height: 30px;
-        background-color: #f1c40f;
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 30px;
-        flex: 0 0 30px;
-        text-align: center;
-        max-width: 30px;
-        border-radius: 50%;
-        margin-right: 15px;
-      }
-
-      .single-timeline-area .single-timeline-content .timeline-icon i {
-        color: #ffffff;
-        line-height: 30px;
-      }
-
-      .single-timeline-area .single-timeline-content .timeline-text h6 {
-        -webkit-transition-duration: 500ms;
-        transition-duration: 500ms;
-      }
-
-      .single-timeline-area .single-timeline-content .timeline-text p {
-        font-size: 13px;
-        margin-bottom: 0;
-      }
-
-      .single-timeline-area .single-timeline-content:hover .timeline-icon,
-      .single-timeline-area .single-timeline-content:focus .timeline-icon {
-        background-color: #020710;
-      }
-
-      .single-timeline-area .single-timeline-content:hover .timeline-text h6,
-      .single-timeline-area .single-timeline-content:focus .timeline-text h6 {
-        color: #3f43fd;
-      }
-    </style>
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="new-pages/css/styles.css" rel="stylesheet" />
   </head>
-
-  <body>
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
-
-    <section class="timeline_area section_padding_130">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-sm-8 col-lg-6">
-            <!-- Section Heading-->
-            <div class="section_heading text-center">
-              <h6>Timeline Projek</h6>
-              <h3>Proyek-proyek yang pernah dikerjakan</h3>
-              <div class="line"></div>
-            </div>
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container px-5">
+          <a class="navbar-brand" href="index.html"
+            ><span class="fw-bolder text-primary">Agus Sutarom</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="resume.html">CV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="projects.html">Proyek</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Kontak</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <!-- Timeline Area-->
-            <div class="apland-timeline-area">
-              <!-- Single Timeline Content-->
-              <div class="single-timeline-area">
+      </nav>
+      <!-- Header-->
+      <header class="py-5">
+        <div class="container px-5 pb-5">
+          <div class="row gx-5 align-items-center">
+            <div class="col-xxl-5">
+              <!-- Header text content-->
+              <div class="text-center text-xxl-start">
                 <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
+                  class="badge bg-gradient-primary-to-secondary text-white mb-4"
                 >
-                  <p>2022</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-address-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Aplikasi C..Tuban</h6>
-                        <p>Aplikasi untuk ...</p>
-                        <p>[Aktif]</p>
-                      </div>
-                    </div>
+                  <div class="text-uppercase">
+                    Analytic &middot; Design System &middot; Programming
                   </div>
+                </div>
+                <div class="fs-3 fw-light text-muted">
+                  Saya dapat membuat bisnis Anda
+                </div>
+                <h1 class="display-3 fw-bolder mb-5">
+                  <span class="text-gradient d-inline"
+                    >Online dan Bertumbuh</span
+                  >
+                </h1>
+                <div
+                  class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3"
+                >
+                  <a
+                    class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
+                    href="resume.html"
+                    >CV</a
+                  >
+                  <a
+                    class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
+                    href="projects.html"
+                    >Daftar Proyek</a
+                  >
                 </div>
               </div>
-
-              <!-- Single Timeline Content-->
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2021</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.5s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.5s;
-                        animation-name: fadeInLeft;
-                      "
+            </div>
+            <div class="col-xxl-7">
+              <!-- Header profile picture-->
+              <div class="d-flex justify-content-center mt-5 mt-xxl-0">
+                <div class="profile bg-gradient-primary-to-secondary">
+                  <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
+                  <!-- Watch a tutorial on how to do this on YouTube (link)-->
+                  <img
+                    class="profile-img"
+                    src="new-pages/assets/profile.png"
+                    alt="..."
+                  />
+                  <div class="dots-1">
+                    <!-- SVG Dots-->
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 191.6 1215.4"
+                      style="enable-background: new 0 0 191.6 1215.4"
+                      xml:space="preserve"
                     >
-                      <div class="timeline-icon">
-                        <i class="fa fa-desktop" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Lomba BUMDesa as Main Dev</h6>
-                        <p>
-                          Lomba BUMDesa digunakan untuk entrian data dan file
-                          terkait lomba
-                        </p>
-                        <p>[Aktif]</p>
-                      </div>
-                    </div>
+                      <g
+                        transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+                      >
+                        <path
+                          d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <!-- END of SVG dots-->
                   </div>
-                </div>
-              </div>
-
-              <!-- Single Timeline Content-->
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2020</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
+                  <div class="dots-2">
+                    <!-- SVG Dots-->
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 191.6 1215.4"
+                      style="enable-background: new 0 0 191.6 1215.4"
+                      xml:space="preserve"
                     >
-                      <div class="timeline-icon">
-                        <i class="fa fa-briefcase" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Aplikasi E-Santri Ponpes SD7</h6>
-                        <p>
-                          Aplikasi E-Santri Ponpes SD7 mencatat daftar santri
-                          dan mencetak kartu tanda santri
-                        </p>
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
+                      <g
+                        transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+                      >
+                        <path
+                          d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <!-- END of SVG dots-->
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.5s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.5s;
-                        animation-name: fadeInLeft;
-                      "
+                  <div class="dots-3">
+                    <!-- SVG Dots-->
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 191.6 1215.4"
+                      style="enable-background: new 0 0 191.6 1215.4"
+                      xml:space="preserve"
                     >
-                      <div class="timeline-icon">
-                        <i class="fa fa-desktop" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Lomba Desa dan Kelurahan as Main Dev</h6>
-                        <p>
-                          Lomba Desa dan Kelurahan digunakan untuk entrian data
-                          dan file terkait lomba
-                        </p>
-                        <p>[Aktif]</p>
-                      </div>
-                    </div>
+                      <g
+                        transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+                      >
+                        <path
+                          d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <!-- END of SVG dots-->
                   </div>
-                </div>
-              </div>
-
-              <!-- Single Timeline Content-->
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2019</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.5s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.5s;
-                        animation-name: fadeInLeft;
-                      "
+                  <div class="dots-4">
+                    <!-- SVG Dots-->
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 191.6 1215.4"
+                      style="enable-background: new 0 0 191.6 1215.4"
+                      xml:space="preserve"
                     >
-                      <div class="timeline-icon">
-                        <i class="fa fa-desktop" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Unsoer.ac.id</h6>
-                        <p>Aplikasi Android survei mahasiswa alumni</p>
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2018</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>DDC</h6>
-                        <p>Website DDC menggunakan yii2</p>
-
-                        <p>[Aktif]</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2017</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>E-KKN Unirow</h6>
-                        <p>
-                          Website E-KKN Unirow as Main Dev menggunakan framework
-                          yii2 end 2021 Website E-PPL Unirow as Main Dev end
-                          2018
-                        </p>
-
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>E-PPL Unirow</h6>
-                        <p>
-                          Website E-PPL Unirow as Main Dev end 2018 menggunakan
-                          framework yii2
-                        </p>
-
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>E-Skripsi Unirow</h6>
-                        <p>
-                          Website E-Skripsi Unirow as Co-Dev end 2018
-                          menggunakan framework yii2
-                        </p>
-
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2016</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Siapatakut</h6>
-                        <p>
-                          Aplikasi siapatakut (entri mimikri siskeudes
-                          kabupaten) menggunakan codeigniter 3 dan yii2
-                        </p>
-
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2014</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>simpangrayatuban.co.id</h6>
-                        <p>
-                          Website Simpangrayatuban as Junior Dev menggunakan
-                          Codeigniter 3
-                        </p>
-
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2013</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Unirow.ac.id</h6>
-                        <p>
-                          Website unirow.ac.id versi putih as Junior Dev
-                          menggunakan Codeigniter 3
-                        </p>
-
-                        <p>[Selesai]</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-timeline-area">
-                <div
-                  class="timeline-date wow fadeInLeft"
-                  data-wow-delay="0.1s"
-                  style="
-                    visibility: visible;
-                    animation-delay: 0.1s;
-                    animation-name: fadeInLeft;
-                  "
-                >
-                  <p>2012</p>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                    <div
-                      class="single-timeline-content d-flex wow fadeInLeft"
-                      data-wow-delay="0.3s"
-                      style="
-                        visibility: visible;
-                        animation-delay: 0.3s;
-                        animation-name: fadeInLeft;
-                      "
-                    >
-                      <div class="timeline-icon">
-                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                      </div>
-                      <div class="timeline-text">
-                        <h6>Mediatuban.com</h6>
-                        <p>Website MediaTuban.com as Main Dev</p>
-
-                        <p>[Aktif]</p>
-
-                        <p>
-                          <a
-                            href="https://mediatuban.com"
-                            class="btn btn-danger btn-block btn-sm"
-                            target="_blank"
-                            >klik disini</a
-                          >
-                        </p>
-                      </div>
-                    </div>
+                      <g
+                        transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+                      >
+                        <path
+                          d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"
+                        ></path>
+                        <path
+                          d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"
+                        ></path>
+                        <path
+                          d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"
+                        ></path>
+                        <path
+                          d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"
+                        ></path>
+                        <path
+                          d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"
+                        ></path>
+                        <path
+                          d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"
+                        ></path>
+                        <path
+                          d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"
+                        ></path>
+                        <path
+                          d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"
+                        ></path>
+                        <path
+                          d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"
+                        ></path>
+                        <path
+                          d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"
+                        ></path>
+                        <path
+                          d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <!-- END of SVG dots-->
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Hallo Nama Saya Agus Sutarom</h1>
-
-          Akun Github :
-          <a
-            href="https://github.com/taroom"
-            class="btn btn-success btn-sm"
-            target="_blank"
-            >@taroom</a
-          >
-          <hr />
-
-          Beberapa Link Perjalanan Mengenal :<br />
-
-          <table class="table">
-            <tr>
-              <td>PHP OOP</td>
-              <td>
-                <a
-                  href="https://github.com/taroom/oop-php"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>HTML, CSS, Javascript</td>
-              <td>
-                <a
-                  href="https://github.com/taroom/latihan-web"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Bootstrap</td>
-              <td>
-                <a
-                  href="https://github.com/taroom/BootstrapExample"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Tailwind</td>
-              <td>
-                <a
-                  href="https://github.com/taroom/TailwindExample"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Vue. JS</td>
-              <td>
-                <a
-                  href="https://github.com/taroom/euvue"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Belajar Lainnya</td>
-              <td>
-                <a
-                  href="https://taroom.github.io/learn"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Inkscape</td>
-              <td>
-                <a
-                  href="https://taroom.github.io/inkscape"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>GIMP</td>
-              <td>
-                <a
-                  href="https://taroom.github.io/gimp"
-                  class="btn btn-primary btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-          </table>
-
-          <br />
-          Sertifikasi :<br />
-
-          <table class="table">
-            <tr>
-              <td>
-                CodePolitan - PZN - Studi Kasus PHP Dasar: Aplikasi Todolist
-                (2022-02-07)
-              </td>
-              <td>
-                <a
-                  href="https://www.codepolitan.com/c/IS7KTMH"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>CodePolitan - PZN - PHP Dasar (2022-02-06)</td>
-              <td>
-                <a
-                  href="https://www.codepolitan.com/c/CSVHI7R"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Sanbercode - Laravel</td>
-              <td>
-                <a
-                  href="https://sanbercode.com/sertifikat/generate/1b631d9e-c54b-409f-9385-7cb90caf2abe"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Sanbercode - Agile Scrum</td>
-              <td>
-                <a
-                  href="https://sanbercode.com/sertifikat/generate/9cc37d03-ff28-4338-a6a4-01588ba5ab26"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Sanbercode - UI UX</td>
-              <td>
-                <a
-                  href="https://sanbercode.com/sertifikat/generate/4b28565e-cb36-4207-ba46-e3d6ec595a49"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Sanbercode - Wordpress</td>
-              <td>
-                <a
-                  href="https://sanbercode.com/sertifikat/generate/28edf31d-17db-415f-a9e5-ca6202abc617"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Frontend Pemula</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/DMRZM2WR3ZYQ"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Javascript Pemula</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/1OP8D7R91PQK"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Solid Principle</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/JMZVMWEEJZN9"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Frontend Web Dev Expert</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/1OP8LYEO1ZQK"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Belajar Membuat Aplikasi Web dengan React</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/KEXLG1EW0ZG2"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Belajar Dasar-Dasar DevOps</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/MRZM4NN83XYQ"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Belajar Jaringan Komputer untuk Pemula</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/QLZ923LO2X5D"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-
-            <tr>
-              <td>Dicoding - Belajar Dasar Manajemen Proyek</td>
-              <td>
-                <a
-                  href="https://www.dicoding.com/certificates/JMZVNRK9QPN9"
-                  class="btn btn-warning btn-block btn-sm"
-                  target="_blank"
-                  >klik disini</a
-                >
-              </td>
-            </tr>
-          </table>
-
-          <hr />
-
-          Copyright &copy; 2015 - 2022
-          <a href="http://agussutarom.wordpress.com/" target="_blank"
-            >Taroomedia</a
-          >
+      </header>
+      <!-- About Section-->
+      <section class="bg-light py-5">
+        <div class="container px-5">
+          <div class="row gx-5 justify-content-center">
+            <div class="col-xxl-8">
+              <div class="text-center my-5">
+                <h2 class="display-5 fw-bolder">
+                  <span class="text-gradient d-inline">Tentang Saya</span>
+                </h2>
+                <p class="lead fw-light mb-4">
+                  Hallo nama saya Agus Sutarom, saya akan membantu usaha Anda
+                  Bertumbuh.
+                </p>
+                <p class="text-muted">
+                  Hari gini masih bergantung pada bisnis yang offline saja,
+                  sungguh terlalu. mari kami bantu untuk mengonlinekan bisnis
+                  Anda
+                </p>
+                <div class="d-flex justify-content-center fs-2 gap-4">
+                  <a
+                    class="text-gradient"
+                    href="https://www.instagram.com/agussutarom/"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a
+                    class="text-gradient"
+                    href="https://www.linkedin.com/in/agussutarom/"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a class="text-gradient" href="https://github.com/taroom"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="bg-white py-4 mt-auto">
+      <div class="container px-5">
+        <div
+          class="row align-items-center justify-content-between flex-column flex-sm-row"
+        >
+          <div class="col-auto">
+            <div class="small m-0">Copyright &copy; Agus Sutarom 2024</div>
+          </div>
+          <div class="col-auto">
+            <a class="small" href="#!">Privacy</a>
+            <span class="mx-1">&middot;</span>
+            <a class="small" href="#!">Terms</a>
+            <span class="mx-1">&middot;</span>
+            <a class="small" href="#!">Contact</a>
+          </div>
         </div>
       </div>
-    </div>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="new-pages/js/scripts.js"></script>
   </body>
 </html>
