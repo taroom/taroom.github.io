@@ -117,25 +117,105 @@
     <script src="new-pages/js/scripts.js"></script>
     <script>
       const projectList = [
-        "DDC",
-        "LombaBumdesa",
-        "E-Gotro Lomba Gotong Royong BBGRM",
-        "Lomdeskel",
-        "Klinik BUMDesa",
-        "PUEM",
-        "E-PKK",
-        "D-KADE",
-        "E-KKN Universitas PGRI Ronggolawe",
-        "E-PPL Universitas PGRI Ronggolawe",
-        "Pusat Karir Universitas PGRI Ronggolawe",
-        "E-Santri Pondok Pesantren 7 Sunan Drajat",
-        "Landing Page Produk Asuransi",
-        "Tracert Study Soeryo",
-        "SiapaTakut (siskeudes version kabupaten)",
-        "SIMPANG Raya",
-        "Sistem Pendukung Keputusan Penyakit Jagung",
-        "SMS Gateway",
-        "Website Informasi RSNU (Skripsi Mahasiswa)",
+        {
+          name: "DDC",
+          description:
+            "Project Provinsi Jawa Timur. Pendataan data desa se-Jatim",
+        },
+        {
+          name: "LombaBumdesa",
+          description: "Lomba antar kabupaten se-Jatim untuk tema BUMDesa",
+        },
+        {
+          name: "E-Gotro Lomba Gotong Royong BBGRM",
+          description:
+            "Lomba antar kabupaten se-Jatim untuk tema Gotong Royong",
+        },
+        {
+          name: "Lomdeskel",
+          description:
+            "Lomba antar kabupaten se-Jatim untuk tema data desa and kelurahan",
+        },
+        {
+          name: "Klinik BUMDesa",
+          description:
+            "E-Learning untuk pelatihan dan sertifikasi BUMDesa yang ada di DDC",
+        },
+        {
+          name: "PUEM",
+          description: "E-Commerce untuk pemasaran produk UKM desa se-jatim",
+        },
+        {
+          name: "D-KADE",
+          description:
+            "Pendataan Kawasan dan Penelitian Tepat Guna provinsi jawa Timur",
+        },
+        {
+          name: "E-PKK",
+          description:
+            "Lomba antar kabupaten se-Jatim untuk tema PKK desa and kelurahan",
+        },
+        {
+          name: "Laporan Tahunan PKK Online",
+          description:
+            "Laporan Tahunan kabupaten se-Jatim untuk Laporan PKK desa and kelurahan",
+        },
+        {
+          name: "E-KKN Universitas PGRI Ronggolawe",
+          description:
+            "Pendataan Mahasiswa KKN Unirow dari 2017 sampai hari ini masih digunakan",
+        },
+        {
+          name: "E-PPL Universitas PGRI Ronggolawe",
+          description: "Pendataan Mahasiswa PPL Unirow",
+        },
+        {
+          name: "Pusat Karir Universitas PGRI Ronggolawe",
+          description:
+            "Membuat website untuk pusat karir Universitas PGRI Ronggolawe",
+        },
+        {
+          name: "E-Santri Pondok Pesantren 7 Sunan Drajat",
+          description: "Aplikasi pendataan santri dan generate kartu santri",
+        },
+        {
+          name: "Landing Page Produk Asuransi",
+          description:
+            "Pembuatan Landing Page sederhana untuk sales produk asuransi",
+        },
+        {
+          name: "Tracert Study Soeryo",
+          description:
+            "Membuat aplikasi Backend Yii dan Android untuk tracert study",
+        },
+        {
+          name: "SiapaTakut (siskeudes version kabupaten)",
+          description: "Aplikasi untuk input online apbdes di kabupaten Tuban",
+        },
+        {
+          name: "SIMPANG Raya",
+          description:
+            "Aplikasi Company Profile untuk Rumah Makan Padang Simpang Raya Jenu Tuban",
+        },
+        {
+          name: "Sistem Pendukung Keputusan Penyakit Jagung",
+          description: "membuat aplikasi SPK untuk mendeteksi penyakit jagung",
+        },
+        {
+          name: "SMS Gateway",
+          description:
+            "Membuat aplikasi SMS Gateway untuk skripsi dan sinkronasi menggunakan gammu",
+        },
+        {
+          name: "Website Informasi RSNU (Skripsi Mahasiswa)",
+          description:
+            "Membuat website sistem informasi RSNU Tuban untuk skripsi",
+        },
+        {
+          name: "Aplikasi Ujian Online (Skripsi Mahasiswa)",
+          description:
+            "Membuat aplikasi ujian online menggunakan yii2 framework untuk skripsi",
+        },
       ];
 
       let htmlContent = "";
@@ -144,12 +224,9 @@
                 <div class="card-body p-0">
                   <div class="d-flex align-items-center">
                     <div class="p-5">
-                      <h2 class="fw-bolder">${m}</h2>
+                      <h2 class="fw-bolder">${m.name}</h2>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eius at enim eum illum aperiam placeat esse? Mollitia
-                        omnis minima saepe recusandae libero, iste ad
-                        asperiores! Explicabo commodi quo itaque! Ipsam!
+                        ${m.description}
                       </p>
                     </div>
                     <img
