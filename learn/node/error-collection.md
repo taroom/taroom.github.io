@@ -18,5 +18,3 @@ ex : npm i -g @vue/cli
 ```
 
 ---
-
-undangan 7 bulanan doc
