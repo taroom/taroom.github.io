@@ -6,7 +6,17 @@ kita bisa mulai membuat aplikasi shortlink dengan mudah menggunakan [repo ini](h
 composer require ashallendesign/short-url
 ```
 
-kemudian ketika sudah selesai install kita bisa membuat route dulu di routes/web.php
+kemudian ketika sudah selesai install, selanjutnya kita publish config dan migration shorturlnya dengan cara:
+
+```
+php artisan vendor:publish --provider="AshAllenDesign\ShortURL\Providers\ShortURLProvider"
+
+kemudian
+
+php artisan migrate
+```
+
+kemudian kita bisa membuat route dulu di routes/web.php
 
 buat sebuah route baru misalkan seperti dibawah ini :
 
