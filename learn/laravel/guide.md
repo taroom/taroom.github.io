@@ -7,6 +7,7 @@
 [install laravel ui](guide-install-laravel-ui.md)<br>
 [Mengotak-atik controller di app/Http/Controllers/](guide-controller-edit.md)<br>
 [Menggunakan Laravel Vite](guide-laravel-vite.md)<br>
+Menggunakan Docker dan Laravel Sail (lihat docker)<br>
 
 ## Controllers
 
