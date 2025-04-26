@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML 5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-6 col-lg-6 mx-auto mt-5">
+          <h1 class="text-center">HTML 5</h1>
+          <div class="accordion" id="html5FeaturesAccordion">
+            <!-- 1. Struktur Semantik -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  1. Struktur Semantik yang Lebih Baik
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>
+                    HTML5 memperkenalkan elemen semantik baru yang membuat
+                    struktur dokumen lebih bermakna:
+                  </p>
+                  <ul>
+                    <li>
+                      <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>:
+                      Untuk kepala dan kaki halaman
+                    </li>
+                    <li><code>&lt;nav&gt;</code>: Untuk navigasi</li>
+                    <li>
+                      <code>&lt;article&gt;</code>: Untuk konten independen
+                    </li>
+                    <li>
+                      <code>&lt;section&gt;</code>: Untuk pengelompokan konten
+                    </li>
+                    <li>
+                      <code>&lt;aside&gt;</code>: Untuk konten samping/sidebar
+                    </li>
+                    <li><code>&lt;main&gt;</code>: Untuk konten utama</li>
+                  </ul>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Memudahkan mesin pencari dan
+                    screen reader memahami struktur halaman, meningkatkan SEO
+                    dan aksesibilitas.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Dukungan Media Native -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  2. Dukungan Media Native
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>HTML5 memungkinkan embed audio dan video tanpa plugin:</p>
+                  <pre><code class="language-html">&lt;video controls&gt;
+                      &lt;source src="video.mp4" type="video/mp4"&gt;
+                    &lt;/video&gt;
+                    
+                    &lt;audio controls&gt;
+                      &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+                    &lt;/audio&gt;</code></pre>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Menggantikan Flash, mengurangi
+                    ketergantungan pada plugin eksternal, dan meningkatkan
+                    performa.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Grafik dan Animasi -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  3. Grafik dan Animasi
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li>
+                      <code>&lt;canvas&gt;</code>: Untuk menggambar grafik 2D
+                      secara dinamis dengan JavaScript
+                    </li>
+                    <li>SVG: Grafik vektor yang scalable</li>
+                  </ul>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Membuat game, visualisasi data,
+                    dan efek animasi langsung di browser.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Formulir yang Lebih Canggih -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  4. Formulir yang Lebih Canggih
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>HTML5 memperkenalkan tipe input baru dan atribut:</p>
+                  <pre><code class="language-html">&lt;input type="email" required&gt;
+                    &lt;input type="date"&gt;
+                    &lt;input type="color"&gt;
+                    &lt;input type="range"&gt;
+                    &lt;input type="search"&gt;</code></pre>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Validasi otomatis, pengalaman
+                    pengguna yang lebih baik, dan mengurangi kebutuhan
+                    JavaScript.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Penyimpanan Lokal (Storage) -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  5. Penyimpanan Lokal (Storage)
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li><code>localStorage</code>: Penyimpanan persisten</li>
+                    <li><code>sessionStorage</code>: Penyimpanan sesi</li>
+                    <li><code>IndexedDB</code>: Database berbasis objek</li>
+                  </ul>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Membuat aplikasi web yang bekerja
+                    offline (PWA), menyimpan preferensi pengguna.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Geolokasi -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix"
+                  aria-expanded="false"
+                  aria-controls="collapseSix"
+                >
+                  6. Geolokasi
+                </button>
+              </h2>
+              <div
+                id="collapseSix"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSix"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <pre><code class="language-javascript">navigator.geolocation.getCurrentPosition(showPosition);</code></pre>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Aplikasi berbasis lokasi seperti
+                    maps, rekomendasi lokasi terdekat.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Drag and Drop API -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSeven">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven"
+                  aria-expanded="false"
+                  aria-controls="collapseSeven"
+                >
+                  7. Drag and Drop API
+                </button>
+              </h2>
+              <div
+                id="collapseSeven"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSeven"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>Memungkinkan elemen untuk di-drag dan di-drop:</p>
+                  <pre><code class="language-html">&lt;div draggable="true" id="dragme"&gt;Drag me!&lt;/div&gt;</code></pre>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Antarmuka pengguna yang
+                    interaktif seperti penyusun konten.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Web Workers -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEight">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseEight"
+                  aria-expanded="false"
+                  aria-controls="collapseEight"
+                >
+                  8. Web Workers
+                </button>
+              </h2>
+              <div
+                id="collapseEight"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingEight"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Memungkinkan eksekusi JavaScript di background tanpa
+                    memblokir UI:
+                  </p>
+                  <pre><code class="language-javascript">const worker = new Worker('worker.js');</code></pre>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Proses berat bisa dijalankan
+                    tanpa membuat halaman freeze.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. WebSocket -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingNine">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseNine"
+                  aria-expanded="false"
+                  aria-controls="collapseNine"
+                >
+                  9. WebSocket
+                </button>
+              </h2>
+              <div
+                id="collapseNine"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingNine"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>Komunikasi dua arah antara client dan server:</p>
+                  <pre><code class="language-javascript">const socket = new WebSocket('ws://example.com');</code></pre>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Aplikasi real-time seperti chat,
+                    notifikasi langsung.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. Responsif dan Mobile-Friendly -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTen">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen"
+                  aria-expanded="false"
+                  aria-controls="collapseTen"
+                >
+                  10. Responsif dan Mobile-Friendly
+                </button>
+              </h2>
+              <div
+                id="collapseTen"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTen"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li>Atribut <code>viewport</code> meta tag</li>
+                    <li>Elemen semantik yang adaptif</li>
+                  </ul>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Membuat website yang bekerja baik
+                    di semua perangkat.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 11. Integrasi dengan CSS3 dan JavaScript Modern -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEleven">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseEleven"
+                  aria-expanded="false"
+                  aria-controls="collapseEleven"
+                >
+                  11. Integrasi dengan CSS3 dan JavaScript Modern
+                </button>
+              </h2>
+              <div
+                id="collapseEleven"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingEleven"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>HTML5 dirancang untuk bekerja sempurna dengan:</p>
+                  <ul>
+                    <li>CSS3 untuk styling lanjutan</li>
+                    <li>ECMAScript 6+ untuk fungsionalitas kompleks</li>
+                  </ul>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Pengembangan aplikasi web yang
+                    kaya fitur.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 12. Microdata -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwelve">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwelve"
+                  aria-expanded="false"
+                  aria-controls="collapseTwelve"
+                >
+                  12. Microdata
+                </button>
+              </h2>
+              <div
+                id="collapseTwelve"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwelve"
+                data-bs-parent="#html5FeaturesAccordion"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Microdata adalah bagian dari HTML5 yang memungkinkan Anda
+                    menyematkan metadata semantik ke dalam konten HTML Anda.
+                  </p>
+                  <pre><code class="language-html">&lt;div itemscope itemtype="http://schema.org/Person"&gt;
+                      &lt;span itemprop="name"&gt;John Doe&lt;/span&gt;
+                      &lt;span itemprop="jobTitle"&gt;Web Developer&lt;/span&gt;
+                    &lt;/div&gt;</code></pre>
+                  <div class="alert alert-primary">
+                    <strong>Kegunaan:</strong> Memperkaya hasil pencarian (rich
+                    snippets) dan membantu mesin pencari memahami konten.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>
