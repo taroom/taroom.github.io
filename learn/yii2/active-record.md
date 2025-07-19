@@ -16,7 +16,36 @@ banyak hal yang bisa anda lakukan dengan menggunakan active record ini
 
 ### HasOne
 
+```php
+public function getRelationName(){
+    return $this->hasOne(OtherTable::class, ['column_on_other' => 'column_in_current_model'])->onCondition(['condition' => $val]);
+}
+
+//access
+$model = Model::findOne(['']);
+$model->relationName->another_column_on_other;
+```
+
 ### HasMany
+
+```php
+public function getManyRelationName(){
+    return $this->hasMany(OtherTable::class, ['column_on_other' => 'column_in_current_model'])->onCondition(['condition' => $val]);
+}
+
+//access
+$model = Model::findOne(['']);
+foreach($model->manyRelationName as $rel){
+    $rel->another_column_on_other;
+}
+
+// or
+$model->getManyRelationName()->count();
+$model->getManyRelationName()->sum('column');
+$model->getManyRelationName()->average('column');
+$model->getManyRelationName()->min('column');
+$model->getManyRelationName()->max('column');
+```
 
 ## Static
 
