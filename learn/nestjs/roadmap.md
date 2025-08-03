@@ -8,6 +8,10 @@
 
   [klik disini](1-arsitektur.md)
 
+## CLI
+
+Nest Add Packages [klik disini](30.nest-cli-add.md)
+
 ## Routing dan Controllers
 
 - Pelajari pembuatan routes
@@ -99,3 +103,14 @@
 
 - Pelajari NestJS best practices
 - Eksplorasi topik lanjutan seperti microservices atau serverless
+
+## Library Yang Dapat Digunakan Di Nest
+
+library bersifat pribadi pengalaman mempelajari
+
+- zod
+- bcrypt
+- typeorm
+- mongoose (untuk koneksi ke mongodb)
+- dsb
+  [klik disini](100.library-yang-dapat-digunakan-di-nest.md)

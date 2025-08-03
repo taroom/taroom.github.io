@@ -1,3 +1,9 @@
+[kembali](roadmap.md)
+
+- [referensi 1](https://www.youtube.com/playlist?list=PLhnVDNT5zYN_PfPXedWpMy_UTeYNExbfR)
+- [referensi 2](https://www.udemy.com/course/nestjs-zero-to-hero)
+- [referensi 3](https://www.udemy.com/course/mastering-nestjs/)
+
 Baik, mari kita mulai dengan point 1: Dasar-dasar NestJS. Saya akan menjelaskan setiap subpoin dengan lebih detail.
 
 1. Pelajari arsitektur NestJS:
@@ -136,3 +142,4 @@ Ini adalah contoh constructor injection, di mana CatsService diinjeksi ke dalam 
 Memahami konsep-konsep ini akan memberikan Anda dasar yang kuat untuk memulai dengan NestJS. Saat Anda mempraktikkannya, Anda akan melihat bagaimana komponen-komponen ini bekerja bersama untuk membuat aplikasi yang terstruktur dan mudah dikelola.
 
 Apakah ada aspek tertentu dari penjelasan ini yang ingin Anda dalami lebih lanjut?
+[kembali](roadmap.md)
