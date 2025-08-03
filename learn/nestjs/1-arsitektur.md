@@ -146,3 +146,4 @@ Memahami konsep-konsep ini akan memberikan Anda dasar yang kuat untuk memulai de
 
 Apakah ada aspek tertentu dari penjelasan ini yang ingin Anda dalami lebih lanjut?
 [kembali](roadmap.md)
+[Langkah - Langkah Flow Pemrograman](2.langkah-langkah-flow.md)

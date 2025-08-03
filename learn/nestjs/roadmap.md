@@ -8,6 +8,8 @@
 
   [klik disini](1-arsitektur.md)
 
+  [Langkah-Langkah pemrograman ](2.langkah-langkah-flow.md)
+
 ## CLI
 
 Nest Add Packages [klik disini](30.nest-cli-add.md)
