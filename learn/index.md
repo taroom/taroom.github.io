@@ -47,7 +47,7 @@
 
 ## NEST JS
 
-- [Intro To NEST Js](nestjs/index.md)
+- [Intro To NEST Js](nestjs/index.html)
 
 ## Linux Terminal
 
