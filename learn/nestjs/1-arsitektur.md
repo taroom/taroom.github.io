@@ -3,6 +3,7 @@
 - [referensi 1](https://www.youtube.com/playlist?list=PLhnVDNT5zYN_PfPXedWpMy_UTeYNExbfR)
 - [referensi 2](https://www.udemy.com/course/nestjs-zero-to-hero)
 - [referensi 3](https://www.udemy.com/course/mastering-nestjs/)
+- [referensi 4](https://www.freecodecamp.org/news/the-nestjs-handbook-learn-to-use-nest-with-code-examples/)
 
 Baik, mari kita mulai dengan point 1: Dasar-dasar NestJS. Saya akan menjelaskan setiap subpoin dengan lebih detail.
 
@@ -14,6 +15,8 @@ Baik, mari kita mulai dengan point 1: Dasar-dasar NestJS. Saya akan menjelaskan 
    - Modular: Aplikasi dibagi menjadi modul-modul yang dapat digunakan kembali.
    - Dependency Injection: Memungkinkan manajemen dependensi yang efisien.
    - Decorators: Digunakan untuk menambahkan metadata ke kelas dan fungsi.
+   - menggunakan typescript dalam pemrogrammannya (lebih disarankan), namun javascript murni juga boleh aja. walaupun hasil akhir tetap akan menjadi javascript (dengan transpiller babel) dalam masa development lebih disarankan typescript
+   - express.js wrapper : membungkus [expressjs](https://expressjs.com/) dengan script yang lebih ke nest friendly. [fastify](https://fastify.dev/) juga didukung loh
 
 2. Pahami konsep Modules, Controllers, dan Providers:
 
