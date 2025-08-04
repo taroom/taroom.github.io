@@ -14,15 +14,15 @@ Baik, mari kita mulai dengan point 1: Dasar-dasar NestJS. Saya akan menjelaskan 
 
    - Modular: Aplikasi dibagi menjadi modul-modul yang dapat digunakan kembali.
    - Dependency Injection: Memungkinkan manajemen dependensi yang efisien.
-   - Decorators: Digunakan untuk menambahkan metadata ke kelas dan fungsi.
-   - menggunakan typescript dalam pemrogrammannya (lebih disarankan), namun javascript murni juga boleh aja. walaupun hasil akhir tetap akan menjadi javascript (dengan transpiller babel) dalam masa development lebih disarankan typescript
-   - express.js wrapper : membungkus [expressjs](https://expressjs.com/) dengan script yang lebih ke nest friendly. [fastify](https://fastify.dev/) juga didukung loh
+   - Decorators: Digunakan untuk menambahkan metadata ke kelas dan fungsi. hal ini lebih mirip memberikan senjata atau tools untuk yang diberikan decorator. nanti Anda akan memahami apa yang saya maksud
+   - menggunakan typescript dalam pemrogramannya (lebih disarankan), namun javascript murni juga boleh aja. walaupun hasil akhir tetap akan menjadi javascript (dengan transpiller babel) dalam masa development lebih disarankan menggunakan **typescript**
+   - **express.js** wrapper : membungkus [expressjs](https://expressjs.com/) dengan script yang lebih ke nest friendly. [fastify](https://fastify.dev/) juga didukung loh
 
 2. Pahami konsep Modules, Controllers, dan Providers:
 
-   - Modules: Unit dasar aplikasi NestJS yang mengelompokkan komponen terkait.
-   - Controllers: Menangani incoming requests dan mengembalikan responses ke client.
-   - Providers: Layanan yang menyediakan fungsionalitas tertentu dan dapat diinjeksi ke komponen lain.
+   - Modules: Unit dasar aplikasi NestJS yang mengelompokkan komponen terkait. dia seperti ketua kelompok yang mengorganisasi anggota macam, controller, service, import, export dsb
+   - Controllers: Menangani http requests yang datang dari client dan mengembalikan lagi responses ke client.
+   - Providers: Layanan yang menyediakan fungsionalitas tertentu dan dapat diinjeksi ke komponen lain. biasanya provider bisa dikatakan service, yang mana bertugas menghubungkan logika bisnis dengan data source macam **database**
 
 3. Buat proyek NestJS pertama Anda:
    Untuk memulai, Anda perlu menginstal NestJS CLI dan membuat proyek baru. Berikut langkah-langkahnya:
@@ -39,14 +39,14 @@ Baik, mari kita mulai dengan point 1: Dasar-dasar NestJS. Saya akan menjelaskan 
    - src/main.ts: Entry point aplikasi
    - src/app.module.ts: Root module aplikasi
    - src/app.controller.ts: Contoh basic controller
-   - src/app.service.ts: Contoh basic service
+   - src/app.service.ts: Contoh basic service/yang berkenaan dengan data aplikasi
 
    Cobalah untuk memahami struktur ini dan bagaimana komponen-komponen tersebut bekerja bersama.
 
 Untuk memulai, saya sarankan Anda:
 
 1. Baca dokumentasi resmi NestJS untuk memahami konsep-konsep dasar.
-2. Buat proyek sederhana dan eksplorasi struktur yang dihasilkan.
+2. Buat proyek sederhana dan eksplorasi struktur dasar yang dihasilkan terlebih dahulu.
 3. Coba modifikasi controller dan service yang ada untuk memahami cara kerjanya.
 4. Buat endpoint baru di controller dan lihat bagaimana itu berfungsi.
 
@@ -54,8 +54,9 @@ Untuk memulai, saya sarankan Anda:
 
 komponen-komponen utama dalam arsitektur NestJS:
 
-1. Modules:
-   Modules adalah inti dari organisasi aplikasi NestJS. Setiap aplikasi memiliki setidaknya satu modul, yaitu root module. Modules membantu dalam mengorganisir kode aplikasi menjadi unit-unit yang dapat dikelola.
+### Modules:
+
+Modules adalah inti dari organisasi aplikasi NestJS. Setiap aplikasi memiliki setidaknya satu modul, yaitu root module. Modules membantu dalam mengorganisir kode aplikasi menjadi unit-unit yang dapat dikelola.
 
 Contoh sederhana modul:
 
@@ -73,13 +74,14 @@ export class CatsModule {}
 
 Decorator @Module() digunakan untuk mendefinisikan sebuah modul. Properti yang umum digunakan dalam decorator ini adalah:
 
-- controllers: Array dari controllers yang didefinisikan dalam modul ini.
-- providers: Array dari services atau providers yang akan diinstansiasi oleh Nest injector.
-- imports: List dari modules yang diimpor, yang ekspornya dibutuhkan oleh modul ini.
-- exports: Array dari providers yang harus tersedia di modul lain yang mengimpor modul ini.
+- **controllers**: Array dari controllers yang didefinisikan dalam modul ini. dalam contoh diatas **CatsController** yang mengarah ke file _src/cats.controller.ts_
+- **providers**: Array dari services atau providers yang akan diinstansiasi oleh Nest injector. ingat kembali apa itu service sesuai petunjuk diatas
+- **imports**: List dari modules yang diimpor, yang ekspornya dibutuhkan oleh modul ini.
+- **exports**: Array dari providers yang harus disediakan oleh module ini untuk digunakan di modul lain yang telah mengimpor modul ini.
 
-2. Controllers:
-   Controllers bertanggung jawab untuk menangani incoming requests dan mengembalikan responses kepada client. Routing mechanism mengontrol controller mana yang menerima requests tertentu.
+### Controllers:
+
+Controllers bertanggung jawab untuk menangani incoming requests dan mengembalikan responses kepada client. Routing mechanism mengontrol controller mana yang menerima requests tertentu.
 
 Contoh sederhana controller:
 
@@ -104,10 +106,11 @@ export class CatsController {
 }
 ```
 
-Decorator @Controller('cats') menentukan bahwa ini adalah controller untuk route '/cats'. Decorator @Get() dan @Post() menentukan HTTP methods untuk routes tertentu.
+Decorator @Controller('cats') menentukan bahwa ini adalah controller untuk route '/cats'. Decorator @Get() dan @Post() menentukan HTTP verbs methods untuk routes tertentu.
 
-3. Providers:
-   Providers adalah konsep fundamental dalam NestJS. Banyak kelas dasar NestJS dapat diperlakukan sebagai provider – services, repositories, factories, helpers, dan sebagainya. Ide utama di balik provider adalah bahwa ia dapat diinjeksi sebagai dependensi.
+### Providers:
+
+Providers adalah konsep fundamental dalam NestJS. Banyak kelas dasar NestJS dapat diperlakukan sebagai provider – services, repositories, factories, helpers, dan sebagainya. Ide utama di balik provider adalah bahwa ia dapat diinjeksi sebagai dependensi.
 
 Contoh sederhana service (yang merupakan jenis provider):
 
@@ -129,10 +132,11 @@ export class CatsService {
 }
 ```
 
-Decorator @Injectable() menandai kelas CatsService sebagai provider yang dapat diinjeksi.
+Decorator @Injectable() menandai kelas CatsService sebagai provider yang dapat diinjeksi ke script lain.
 
-4. Dependency Injection:
-   NestJS membangun sistem Dependency Injection di sekitar konsep provider. Providers dapat diinjeksi ke constructors jika didekorasi dengan @Injectable().
+### Dependency Injection:
+
+NestJS membangun sistem Dependency Injection di sekitar konsep provider. Providers dapat diinjeksi ke constructors jika didekorasi dengan @Injectable().
 
 Contoh:
 
@@ -140,7 +144,7 @@ Contoh:
 constructor(private catsService: CatsService) {}
 ```
 
-Ini adalah contoh constructor injection, di mana CatsService diinjeksi ke dalam controller.
+Ini adalah contoh constructor injection, di mana CatsService diinjeksi ke dalam constructor controller dari **CatsController** misalnya (lihat pada bagian controller diatas).
 
 Memahami konsep-konsep ini akan memberikan Anda dasar yang kuat untuk memulai dengan NestJS. Saat Anda mempraktikkannya, Anda akan melihat bagaimana komponen-komponen ini bekerja bersama untuk membuat aplikasi yang terstruktur dan mudah dikelola.
 
