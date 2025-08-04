@@ -56,7 +56,7 @@ komponen-komponen utama dalam arsitektur NestJS:
 
 ### Modules:
 
-Modules adalah inti dari organisasi aplikasi NestJS. Setiap aplikasi memiliki setidaknya satu modul, yaitu root module. Modules membantu dalam mengorganisir kode aplikasi menjadi unit-unit yang dapat dikelola.
+Modules adalah inti dari organisasi aplikasi NestJS. Setiap aplikasi memiliki setidaknya satu modul, yaitu root module. Modules membantu dalam mengorganisir kode aplikasi menjadi unit-unit yang dapat dikelola. module adalah class yang diberikan decorator @Module({ param }). nah karena sifat nest yang modular, module parent/root bisa memiliki banyak sekali child module dan child module pun bisa punya banyak anak lagi. Anda bisa mengimplementasikan ini dengan parameter **imports**.
 
 Contoh sederhana modul:
 
@@ -78,6 +78,8 @@ Decorator @Module() digunakan untuk mendefinisikan sebuah modul. Properti yang u
 - **providers**: Array dari services atau providers yang akan diinstansiasi oleh Nest injector. ingat kembali apa itu service sesuai petunjuk diatas
 - **imports**: List dari modules yang diimpor, yang ekspornya dibutuhkan oleh modul ini.
 - **exports**: Array dari providers yang harus disediakan oleh module ini untuk digunakan di modul lain yang telah mengimpor modul ini.
+
+selain cara manual kamu juga bisa pakai cli module generator nest [lihat disini](28.nest-cli-generate.md)
 
 ### Controllers:
 
@@ -147,6 +149,12 @@ constructor(private catsService: CatsService) {}
 Ini adalah contoh constructor injection, di mana CatsService diinjeksi ke dalam constructor controller dari **CatsController** misalnya (lihat pada bagian controller diatas).
 
 Memahami konsep-konsep ini akan memberikan Anda dasar yang kuat untuk memulai dengan NestJS. Saat Anda mempraktikkannya, Anda akan melihat bagaimana komponen-komponen ini bekerja bersama untuk membuat aplikasi yang terstruktur dan mudah dikelola.
+
+### Decorator @...()
+
+nest menggunakan decorator hampir disemua bagian pemrogramannya. @Module, @Controller, @Get, @Post, @Put, @Delete, @Injectable dll. decorator sendiri menurut saya seperti memberikan label tertentu untuk script dibawahnya. contoh jika @Controller digunakan maka dibawahnya adalah bagian dari script controller sesuai dengan penjelasan tentang controller diatas. selain controller, decorator bisa ditempatkan dimana aja baik di parameter, function, annotation class, constructor dll. di nest pun Anda bisa membuat custom decorator lohh coba [(custom decorator) lihat bagian ini](80.custom-decorator.md).
+
+didalam decorator ada parameter yang bisa digunakan untuk memperjelas kegunaan dari decorator. contoh @Controller('/api') parameter ini menjadikan controller bisa diakses di https://localhost:3000/api (btw default port untuk aplikasi nest, 3000 kecuali anda mengubahnya di **main.ts**)
 
 Apakah ada aspek tertentu dari penjelasan ini yang ingin Anda dalami lebih lanjut?
 [kembali](roadmap.md)
