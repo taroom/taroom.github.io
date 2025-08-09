@@ -1,5 +1,10 @@
 # Nest JS
 
+## Reference
+
+- Programmer Zaman Now
+  - https://youtu.be/BXTEwuoDkDQ?si=Dn-Q9khR2fR-_Ogc&t=1917 (2025-08-05 00:19:57)
+
 ## Dasar-dasar NestJS
 
 - Pelajari arsitektur NestJS
@@ -19,6 +24,7 @@ Nest Add Packages [klik disini](30.nest-cli-add.md)
 - Pelajari pembuatan routes
 - Implementasikan HTTP methods (GET, POST, PUT, DELETE)
 - Gunakan route parameters dan query strings
+- **dto** data transfer object [klik disini](10.dto.md)
 
 ## Providers dan Dependency Injection
 
