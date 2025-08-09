@@ -156,6 +156,32 @@ nest menggunakan decorator hampir disemua bagian pemrogramannya. @Module, @Contr
 
 didalam decorator ada parameter yang bisa digunakan untuk memperjelas kegunaan dari decorator. contoh @Controller('/api') parameter ini menjadikan controller bisa diakses di https://localhost:3000/api (btw default port untuk aplikasi nest, 3000 kecuali anda mengubahnya di **main.ts**)
 
+### Nb :
+
+providers dan controllers digunakan untuk menambahkan daftar providers dan controllers agar ikut di init dengan module
+
+exports digunakan untuk menambahkan providers dari module asal, yang bisa digunakan di module lain, jadi misal module B butuh service yang ada di module A maka module A harus menambahkan service ke daftar exports
+
+sedangkan imports adalah module yang dibutuhkan oleh module pengakses, misal module Aplikasi membutuhkan module User, nah Anda bisa menambahkan module User kedalam array imports
+
+```bash
+nest g mo tasks
+```
+
+perintah di atas akan membuat sebuah module dengan nama tasks, mencakup membuat folder tasks, membuat file tasks/tasks.module.ts dan mengupdate app.module.ts
+
+```bash
+nest g co tasks --no-spec
+```
+
+perintah di atas untuk membuat controllers dengan cli tanpa membuat test file
+
+```bash
+nest g s tasks --no-spec
+```
+
+perintah di atas untuk membuat provider service task di folder task, kemudian dia akan registerkan secara otomatis ke tasks/tasks.module.ts
+
 Apakah ada aspek tertentu dari penjelasan ini yang ingin Anda dalami lebih lanjut?
 [kembali](roadmap.md)
 [Langkah - Langkah Flow Pemrograman](2.langkah-langkah-flow.md)

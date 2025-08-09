@@ -4,6 +4,8 @@
 
 - Programmer Zaman Now
   - https://youtu.be/BXTEwuoDkDQ?si=Dn-Q9khR2fR-_Ogc&t=1917 (2025-08-05 00:19:57)
+- Tech Vision
+  - https://www.youtube.com/watch?v=IdsBwplQAMw
 
 ## Dasar-dasar NestJS
 
@@ -14,6 +16,14 @@
   [klik disini](1-arsitektur.md)
 
   [Langkah-Langkah pemrograman ](2.langkah-langkah-flow.md)
+
+## Apa yang bisa Anda buat dengan Nest JS
+
+- Restfull API
+- Microservice (mirip restfull API tapi bisa berkomunikasi tak hanya dengan https aja, contoh bisa menggunakan TCP, NAT dsb)
+- Standalone Aplikasi, aplikasi yang tidak punya listener jaringan, contohnya: CLI Tools, Scheduling Task Tool
+
+dari semua itu, yang menjadi benang merah dari semuanya adalah mereka semua butuh 1 modul utama (root module) lihat bagian module
 
 ## CLI
 
@@ -34,6 +44,7 @@ Nest Add Packages [klik disini](30.nest-cli-add.md)
 
 ## Modules
 
+- module explanation. [lihat disini](3.module.md)
 - Buat dan organisasikan Modules
 - Pelajari Module importing dan exporting
 
