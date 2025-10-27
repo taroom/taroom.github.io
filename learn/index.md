@@ -12,6 +12,12 @@
 
 ## PHP 8up
 
+- Reflector
+
+## Excel
+
+- [Password Generator](excel/password-generator.md)
+
 ## MySQL
 
 - [disable full groupby](mysql/disable-full-groupby.md)
