@@ -55,3 +55,7 @@ go run main.go
 ```
 
 Buka browser: http://localhost:3000
+
+---
+
+[<- Kembali ke Index](index.md)

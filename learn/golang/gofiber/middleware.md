@@ -44,3 +44,7 @@ api.Get("/profile", profileHandler)
 
 - Pastikan middleware selalu memanggil `c.Next()` jika request boleh lanjut.
 - Middleware auth sebaiknya memvalidasi token sebelum masuk handler.
+
+---
+
+[<- Kembali ke Index](index.md)

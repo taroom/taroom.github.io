@@ -44,3 +44,7 @@ v1.Get("/health", func(c *fiber.Ctx) error {
 
 - Gunakan path yang konsisten, misalnya semua endpoint API diawali `/api/v1`.
 - Gunakan nama route yang jelas dan mudah dibaca.
+
+---
+
+[<- Kembali ke Index](index.md)

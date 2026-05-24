@@ -34,3 +34,7 @@ belajar-gofiber/
 - Pisahkan logic HTTP, business logic, dan data access.
 - Hindari business logic tebal di handler.
 - Gunakan environment variable untuk konfigurasi.
+
+---
+
+[<- Kembali ke Index](index.md)

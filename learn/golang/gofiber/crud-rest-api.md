@@ -47,3 +47,7 @@ app.Post("/api/v1/products", func(c *fiber.Ctx) error {
 1. Mulai dari in-memory data untuk memahami alur.
 2. Lanjut ke database (MySQL/PostgreSQL) saat alur sudah benar.
 3. Tambahkan validasi, pagination, dan filter.
+
+---
+
+[<- Kembali ke Index](index.md)
