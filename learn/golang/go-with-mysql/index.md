@@ -7,3 +7,8 @@ Materi belajar integrasi Golang dengan MySQL.
 3. [CRUD sederhana](3.crud-sederhana.md)
 4. [Menjalankan migration manual](4.migration-manual.md)
 5. [Best practice query dan error handling](5.best-practice.md)
+
+---
+
+[<- Kembali ke Golang Index](../index.md)
+[GoFiber](../gofiber/index.md)

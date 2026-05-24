@@ -8,3 +8,8 @@ Daftar materi GoFiber:
 4. [Middleware](middleware.md)
 5. [CRUD REST API](crud-rest-api.md)
 6. [Struktur Project GoFiber](project-structure.md)
+
+---
+
+[<- Kembali ke Golang Index](../index.md)
+[Go with MySQL](../go-with-mysql/index.md)
