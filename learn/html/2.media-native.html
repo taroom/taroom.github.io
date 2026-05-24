@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Native</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-6 col-lg-6 mx-auto mt-5">
+          <a href="index.html" class="btn btn-sm btn-success">Kembali</a>
+          <h1 class="text-center mb-4">Media Native HTML5</h1>
+          <p class="text-center mb-4">
+            Media native HTML5 adalah elemen yang digunakan untuk menampilkan
+            konten multimedia seperti gambar, video, dan audio secara langsung
+            di dalam halaman web tanpa memerlukan plugin tambahan.
+          </p>
+
+          <div class="accordion" id="mediaAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="mediaHeading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#mediaCollapse"
+                  aria-expanded="true"
+                  aria-controls="mediaCollapse"
+                >
+                  <i class="bi bi-film me-2"></i>
+                  <strong>2. Dukungan Media Native HTML5</strong>
+                </button>
+              </h2>
+              <div
+                id="mediaCollapse"
+                class="accordion-collapse collapse show"
+                aria-labelledby="mediaHeading"
+                data-bs-parent="#mediaAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Pengantar -->
+                  <div class="alert alert-info mb-4">
+                    <h4 class="alert-heading">
+                      <i class="bi bi-info-circle"></i> Revolusi Media Web
+                    </h4>
+                    <p class="mb-0">
+                      HTML5 menghadirkan dukungan native untuk audio dan video
+                      tanpa memerlukan plugin eksternal seperti Flash.
+                    </p>
+                  </div>
+
+                  <!-- Video Section -->
+                  <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                      <h5><i class="bi bi-camera-reels"></i> Video HTML5</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Contoh Implementasi:</h6>
+                          <pre><code class="language-html">&lt;video width="640" height="360" controls poster="preview.jpg"&gt;
+            &lt;source src="video.mp4" type="video/mp4"&gt;
+            &lt;source src="video.webm" type="video/webm"&gt;
+            Browser Anda tidak mendukung tag video.
+          &lt;/video&gt;</code></pre>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Atribut Penting:</h6>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <code>controls</code> : Tampilkan kontrol
+                              pemutaran
+                            </li>
+                            <li class="list-group-item">
+                              <code>autoplay</code> : Mulai otomatis (terbatas
+                              oleh browser)
+                            </li>
+                            <li class="list-group-item">
+                              <code>loop</code> : Putar ulang otomatis
+                            </li>
+                            <li class="list-group-item">
+                              <code>muted</code> : Nonaktifkan suara
+                            </li>
+                            <li class="list-group-item">
+                              <code>poster</code> : Gambar thumbnail
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="mt-3 p-3 bg-light rounded">
+                        <h6>
+                          <i class="bi bi-lightbulb"></i> Format Video yang
+                          Didukung:
+                        </h6>
+                        <div class="table-responsive">
+                          <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Format</th>
+                                <th>MIME Type</th>
+                                <th>Dukungan Browser</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>MP4 (H.264)</td>
+                                <td>video/mp4</td>
+                                <td>
+                                  <span class="badge bg-success"
+                                    >Semua Browser</span
+                                  >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>WebM (VP9)</td>
+                                <td>video/webm</td>
+                                <td>
+                                  <span class="badge bg-success"
+                                    >Kecuali IE</span
+                                  >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Ogg Theora</td>
+                                <td>video/ogg</td>
+                                <td>
+                                  <span class="badge bg-warning text-dark"
+                                    >Terbatas</span
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Audio Section -->
+                  <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                      <h5>
+                        <i class="bi bi-music-note-beamed"></i> Audio HTML5
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Contoh Implementasi:</h6>
+                          <pre><code class="language-html">&lt;audio controls&gt;
+            &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+            &lt;source src="audio.ogg" type="audio/ogg"&gt;
+            Browser Anda tidak mendukung tag audio.
+          &lt;/audio&gt;</code></pre>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Atribut Penting:</h6>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <code>controls</code> : Tampilkan kontrol
+                              pemutaran
+                            </li>
+                            <li class="list-group-item">
+                              <code>autoplay</code> : Mulai otomatis (terbatas
+                              kebijakan browser)
+                            </li>
+                            <li class="list-group-item">
+                              <code>loop</code> : Putar ulang otomatis
+                            </li>
+                            <li class="list-group-item">
+                              <code>preload</code> : Metadata/auto/none
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="mt-3 p-3 bg-light rounded">
+                        <h6>
+                          <i class="bi bi-lightbulb"></i> Format Audio yang
+                          Didukung:
+                        </h6>
+                        <div class="table-responsive">
+                          <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Format</th>
+                                <th>MIME Type</th>
+                                <th>Dukungan Browser</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>MP3</td>
+                                <td>audio/mpeg</td>
+                                <td>
+                                  <span class="badge bg-success"
+                                    >Semua Browser</span
+                                  >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>WAV</td>
+                                <td>audio/wav</td>
+                                <td>
+                                  <span class="badge bg-success"
+                                    >Kecuali IE</span
+                                  >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Ogg Vorbis</td>
+                                <td>audio/ogg</td>
+                                <td>
+                                  <span class="badge bg-warning text-dark"
+                                    >Terbatas</span
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- JavaScript API -->
+                  <div class="card border-danger mb-4">
+                    <div class="card-header bg-danger text-white">
+                      <h5>
+                        <i class="bi bi-code-slash"></i> JavaScript API untuk
+                        Media
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <h6>Contoh Kontrol Media dengan JavaScript:</h6>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <pre><code class="language-javascript">// Mendapatkan elemen video
+          const video = document.getElementById('myVideo');
+          
+          // Method dasar
+          video.play();  // Memutar
+          video.pause(); // Menjeda
+          
+          // Properti penting
+          video.currentTime = 30; // Lompat ke detik ke-30
+          video.volume = 0.5;     // Set volume 50%
+          
+          // Event listener
+          video.addEventListener('ended', () => {
+            console.log('Video selesai diputar');
+          });</code></pre>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="p-3 bg-light rounded">
+                            <h6>
+                              <i class="bi bi-gear"></i> Fitur API Lanjutan:
+                            </h6>
+                            <ul>
+                              <li>
+                                <code>video.requestFullscreen()</code> - Mode
+                                layar penuh
+                              </li>
+                              <li>
+                                <code>video.captureStream()</code> - Capture
+                                untuk WebRTC
+                              </li>
+                              <li>
+                                <code>video.textTracks</code> - Untuk subtitle
+                              </li>
+                              <li>
+                                <code>video.playbackRate</code> - Kecepatan
+                                pemutaran
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Manfaat -->
+                  <div class="mt-4 p-3 bg-success bg-opacity-10 rounded">
+                    <h4>
+                      <i class="bi bi-check-circle text-success"></i> Keunggulan
+                      Media HTML5:
+                    </h4>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="p-3">
+                          <h5><i class="bi bi-speedometer2"></i> Performa</h5>
+                          <p>
+                            Lebih ringan karena native browser support tanpa
+                            plugin tambahan
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="p-3">
+                          <h5><i class="bi bi-phone"></i> Mobile Friendly</h5>
+                          <p>Didukung penuh di perangkat mobile tanpa Flash</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="p-3">
+                          <h5><i class="bi bi-shield-check"></i> Keamanan</h5>
+                          <p>
+                            Mengurangi risiko keamanan dari plugin eksternal
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Best Practices -->
+                  <div class="alert alert-warning mt-4">
+                    <h4>
+                      <i class="bi bi-exclamation-triangle"></i> Best Practices:
+                    </h4>
+                    <ul>
+                      <li>
+                        Selalu sertakan <strong>fallback content</strong> untuk
+                        browser lama
+                      </li>
+                      <li>
+                        Gunakan <strong>beberapa format sumber</strong> untuk
+                        kompatibilitas maksimal
+                      </li>
+                      <li>
+                        Optimalkan video dengan
+                        <strong>compression</strong> (H.264 untuk MP4)
+                      </li>
+                      <li>
+                        Pertimbangkan <strong>autoplay policies</strong> browser
+                        modern
+                      </li>
+                      <li>
+                        Gunakan <strong>lazy loading</strong> untuk video di
+                        bawah halaman
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Contoh Live -->
+                  <div class="card mt-4">
+                    <div class="card-header">
+                      <h5><i class="bi bi-play-circle"></i> Contoh Live</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Video Player:</h6>
+                          <video width="100%" controls class="border rounded">
+                            <source
+                              src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_2MB.mp4"
+                              type="video/mp4"
+                            />
+                            Browser tidak mendukung video HTML5.
+                          </video>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Audio Player:</h6>
+                          <audio controls class="w-100">
+                            <source
+                              src="https://samplelib.com/lib/preview/mp3/sample-15s.mp3"
+                              type="audio/mpeg"
+                            />
+                            Browser tidak mendukung audio HTML5.
+                          </audio>
+                          <div class="mt-3">
+                            <button
+                              class="btn btn-sm btn-outline-primary me-2"
+                              onclick="document.querySelector('audio').play()"
+                            >
+                              <i class="bi bi-play"></i> Play
+                            </button>
+                            <button
+                              class="btn btn-sm btn-outline-danger"
+                              onclick="document.querySelector('audio').pause()"
+                            >
+                              <i class="bi bi-pause"></i> Pause
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>

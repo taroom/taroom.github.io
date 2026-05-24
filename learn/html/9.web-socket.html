@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Socket</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css"
+      integrity="sha512-/mZ1FHPkg6EKcxo0fKXF51ak6Cr2ocgDi5ytaTBjsQZIH/RNs6GF6+oId/vPe3eJB836T36nXwVh/WBl/cWT4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css"
+      integrity="sha512-kSwGoyIkfz4+hMo5jkJngSByil9jxJPKbweYec/UgS+S1EgE45qm4Gea7Ks2oxQ7qiYyyZRn66A9df2lMtjIsw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-6 col-lg-6 mx-auto mt-5">
+          <a href="index.html" class="btn btn-sm btn-success">Kembali</a>
+          <h1 class="text-center mb-4">
+            <i class="bi bi-palette"></i> Web Socket
+          </h1>
+          <p class="text-center mb-4">
+            Web Socket adalah protokol komunikasi yang menyediakan saluran
+            komunikasi full-duplex melalui koneksi TCP. Ini memungkinkan
+            pertukaran data secara real-time antara klien dan server.
+          </p>
+          <p class="text-center mb-4">
+            Web Socket digunakan dalam aplikasi web yang memerlukan komunikasi
+            real-time, seperti aplikasi chat, game online, dan aplikasi
+            kolaborasi.
+          </p>
+
+          <div class="accordion" id="websocketAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="websocketHeading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#websocketCollapse"
+                  aria-expanded="true"
+                  aria-controls="websocketCollapse"
+                >
+                  <i class="bi bi-lightning-charge me-2"></i>
+                  <strong>9. WebSocket API</strong>
+                </button>
+              </h2>
+              <div
+                id="websocketCollapse"
+                class="accordion-collapse collapse show"
+                aria-labelledby="websocketHeading"
+                data-bs-parent="#websocketAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Pengantar -->
+                  <div class="alert alert-info mb-4">
+                    <h4 class="alert-heading">
+                      <i class="bi bi-arrows-angle-contract"></i> Komunikasi
+                      Real-Time Dua Arah
+                    </h4>
+                    <p>
+                      WebSocket menyediakan koneksi persisten dua arah antara
+                      client dan server, ideal untuk aplikasi real-time.
+                    </p>
+                  </div>
+
+                  <!-- Dasar WebSocket -->
+                  <div class="card mb-4 border-primary">
+                    <div class="card-header bg-primary text-white">
+                      <h5><i class="bi bi-plug"></i> Dasar WebSocket</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Perbandingan dengan HTTP:</h6>
+                          <div class="table-responsive">
+                            <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>Aspek</th>
+                                  <th>HTTP</th>
+                                  <th>WebSocket</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Koneksi</td>
+                                  <td>Stateless, terputus setelah request</td>
+                                  <td>Persisten, terus-menerus</td>
+                                </tr>
+                                <tr>
+                                  <td>Komunikasi</td>
+                                  <td>Client → Server saja</td>
+                                  <td>Dua arah (full-duplex)</td>
+                                </tr>
+                                <tr>
+                                  <td>Overhead</td>
+                                  <td>Header lengkap setiap request</td>
+                                  <td>Header minimal setelah handshake</td>
+                                </tr>
+                                <tr>
+                                  <td>Use Case</td>
+                                  <td>Halaman web tradisional</td>
+                                  <td>Aplikasi real-time</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Lifecycle WebSocket:</h6>
+                          <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                              <strong>Handshake</strong> - Koneksi awal via HTTP
+                              upgrade
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Connected</strong> - Koneksi terbuka
+                              (onopen)
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Communication</strong> - Pertukaran data
+                              (onmessage)
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Closing</strong> - Penutupan koneksi
+                              (onclose)
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Error Handling</strong> - Tangani error
+                              (onerror)
+                            </li>
+                          </ol>
+
+                          <div class="mt-3 p-3 bg-light rounded">
+                            <h6>URI Scheme:</h6>
+                            <code>ws://</code> (unencrypted) atau
+                            <code>wss://</code> (encrypted, rekomendasi)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Implementasi Client -->
+                  <div class="card mb-4 border-success">
+                    <div class="card-header bg-success text-white">
+                      <h5>
+                        <i class="bi bi-code-square"></i> Implementasi Client
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Koneksi Dasar:</h6>
+                          <pre><code class="language-javascript">
+// Buat koneksi WebSocket
+const socket = new WebSocket('wss://example.com/socket');
+
+// Event saat koneksi terbuka
+socket.addEventListener('open', (event) => {
+    console.log('Connected to server');
+    socket.send('Hello Server!');
+});
+
+// Event menerima pesan
+socket.addEventListener('message', (event) => {
+    console.log('Message from server:', event.data);
+});
+
+// Event saat koneksi tertutup
+socket.addEventListener('close', (event) => {
+    console.log('Disconnected:', event.code, event.reason);
+});
+
+// Event error
+socket.addEventListener('error', (error) => {
+    console.error('WebSocket error:', error);
+});
+            </code></pre>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Method Utama:</h6>
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <strong>send(data)</strong> - Mengirim data ke
+                              server
+                            </li>
+                            <li class="list-group-item">
+                              <strong>close(code?, reason?)</strong> - Menutup
+                              koneksi
+                            </li>
+                          </ul>
+
+                          <div class="mt-3">
+                            <h6>Status Koneksi:</h6>
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <code>socket.readyState</code>:
+                                <ul>
+                                  <li>0: CONNECTING</li>
+                                  <li>1: OPEN</li>
+                                  <li>2: CLOSING</li>
+                                  <li>3: CLOSED</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Demo Chat Real-Time -->
+                  <div class="card mb-4 border-warning">
+                    <div class="card-header bg-warning text-dark">
+                      <h5>
+                        <i class="bi bi-chat-left-text"></i> Demo: Aplikasi Chat
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Nama Pengguna:</label>
+                            <input
+                              type="text"
+                              id="chatUsername"
+                              class="form-control"
+                              placeholder="Your name"
+                            />
+                          </div>
+                          <div
+                            id="chatMessages"
+                            class="border rounded p-3 mb-3"
+                            style="height: 200px; overflow-y: scroll"
+                          >
+                            <p class="text-muted text-center mt-5">
+                              Messages will appear here...
+                            </p>
+                          </div>
+                          <div class="input-group">
+                            <input
+                              type="text"
+                              id="chatInput"
+                              class="form-control"
+                              placeholder="Type a message..."
+                            />
+                            <button
+                              id="chatSendBtn"
+                              class="btn btn-primary"
+                              disabled
+                            >
+                              <i class="bi bi-send"></i> Send
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Status Koneksi:</h6>
+                          <div
+                            id="connectionStatus"
+                            class="alert alert-secondary"
+                          >
+                            <span id="statusText">Disconnected</span>
+                            <button
+                              id="connectBtn"
+                              class="btn btn-sm btn-success float-end"
+                            >
+                              Connect
+                            </button>
+                          </div>
+
+                          <h6 class="mt-4">Log Aktivitas:</h6>
+                          <div
+                            id="activityLog"
+                            class="border rounded p-2 small"
+                            style="height: 150px; overflow-y: scroll"
+                          ></div>
+
+                          <div class="mt-3">
+                            <button
+                              id="disconnectBtn"
+                              class="btn btn-sm btn-danger"
+                              disabled
+                            >
+                              <i class="bi bi-plug"></i> Disconnect
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <script>
+                        // Gunakan server WebSocket publik untuk demo
+                        const demoServerUrl = "wss://echo.websocket.org";
+                        let socket;
+
+                        // Elemen UI
+                        const statusText =
+                          document.getElementById("statusText");
+                        const connectBtn =
+                          document.getElementById("connectBtn");
+                        const disconnectBtn =
+                          document.getElementById("disconnectBtn");
+                        const chatSendBtn =
+                          document.getElementById("chatSendBtn");
+                        const chatInput = document.getElementById("chatInput");
+                        const chatMessages =
+                          document.getElementById("chatMessages");
+                        const activityLog =
+                          document.getElementById("activityLog");
+                        const chatUsername =
+                          document.getElementById("chatUsername");
+
+                        // Fungsi untuk log aktivitas
+                        function logActivity(message) {
+                          const logEntry = document.createElement("div");
+                          logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+                          activityLog.appendChild(logEntry);
+                          activityLog.scrollTop = activityLog.scrollHeight;
+                        }
+
+                        // Fungsi untuk menampilkan pesan chat
+                        function displayMessage(
+                          sender,
+                          message,
+                          isOwn = false
+                        ) {
+                          if (chatMessages.querySelector(".text-muted")) {
+                            chatMessages.innerHTML = "";
+                          }
+
+                          const messageDiv = document.createElement("div");
+                          messageDiv.className = `mb-2 ${
+                            isOwn ? "text-end" : "text-start"
+                          }`;
+
+                          const senderSpan = document.createElement("span");
+                          senderSpan.className = "small fw-bold";
+                          senderSpan.textContent = sender + ": ";
+
+                          const textSpan = document.createElement("span");
+                          textSpan.textContent = message;
+
+                          messageDiv.appendChild(senderSpan);
+                          messageDiv.appendChild(textSpan);
+                          chatMessages.appendChild(messageDiv);
+                          chatMessages.scrollTop = chatMessages.scrollHeight;
+                        }
+
+                        // Koneksi WebSocket
+                        connectBtn.addEventListener("click", () => {
+                          socket = new WebSocket(demoServerUrl);
+
+                          socket.addEventListener("open", () => {
+                            statusText.textContent = "Connected";
+                            statusText.parentElement.className =
+                              "alert alert-success";
+                            connectBtn.disabled = true;
+                            disconnectBtn.disabled = false;
+                            chatSendBtn.disabled = false;
+                            logActivity("Connected to server");
+                          });
+
+                          socket.addEventListener("close", () => {
+                            statusText.textContent = "Disconnected";
+                            statusText.parentElement.className =
+                              "alert alert-secondary";
+                            connectBtn.disabled = false;
+                            disconnectBtn.disabled = true;
+                            chatSendBtn.disabled = true;
+                            logActivity("Disconnected from server");
+                          });
+
+                          socket.addEventListener("message", (event) => {
+                            try {
+                              const data = JSON.parse(event.data);
+                              if (data.type === "message") {
+                                displayMessage(data.sender, data.message);
+                              }
+                            } catch {
+                              // Untuk server echo, tampilkan langsung
+                              displayMessage("Server", event.data);
+                            }
+                            logActivity(`Received: ${event.data}`);
+                          });
+
+                          socket.addEventListener("error", (error) => {
+                            logActivity(`Error: ${error.message}`);
+                          });
+                        });
+
+                        // Disconnect
+                        disconnectBtn.addEventListener("click", () => {
+                          if (socket) {
+                            socket.close();
+                          }
+                        });
+
+                        // Kirim pesan
+                        chatSendBtn.addEventListener("click", () => {
+                          const message = chatInput.value.trim();
+                          const username =
+                            chatUsername.value.trim() || "Anonymous";
+
+                          if (
+                            message &&
+                            socket &&
+                            socket.readyState === WebSocket.OPEN
+                          ) {
+                            const payload = {
+                              type: "message",
+                              sender: username,
+                              message: message,
+                              timestamp: new Date().toISOString(),
+                            };
+
+                            socket.send(JSON.stringify(payload));
+                            displayMessage(username, message, true);
+                            logActivity(`Sent: ${message}`);
+                            chatInput.value = "";
+                          }
+                        });
+
+                        // Kirim dengan Enter
+                        chatInput.addEventListener("keypress", (e) => {
+                          if (e.key === "Enter") {
+                            chatSendBtn.click();
+                          }
+                        });
+                      </script>
+                    </div>
+                  </div>
+
+                  <!-- Server-Side Implementation -->
+                  <div class="card mb-4 border-danger">
+                    <div class="card-header bg-danger text-white">
+                      <h5><i class="bi bi-server"></i> Implementasi Server</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Node.js dengan ws Library:</h6>
+                          <pre><code class="language-javascript">
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
+
+wss.on('connection', (ws) => {
+    console.log('New client connected');
+
+    // Terima pesan dari client
+    ws.on('message', (message) => {
+        console.log('Received:', message);
+        
+        // Broadcast ke semua client
+        wss.clients.forEach((client) => {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    });
+
+    // Kirim welcome message
+    ws.send('Welcome to WebSocket server!');
+});
+            </code></pre>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>PHP dengan Ratchet:</h6>
+                          <pre><code class="language-php">use Ratchet\MessageComponentInterface;
+              use Ratchet\ConnectionInterface;
+              
+              class Chat implements MessageComponentInterface {
+                  protected $clients;
+              
+                  public function __construct() {
+                      $this->clients = new \SplObjectStorage;
+                  }
+              
+                  public function onOpen(ConnectionInterface $conn) {
+                      $this->clients->attach($conn);
+                  }
+              
+                  public function onMessage(ConnectionInterface $from, $msg) {
+                      foreach ($this->clients as $client) {
+                          $client->send($msg);
+                      }
+                  }
+              
+                  public function onClose(ConnectionInterface $conn) {
+                      $this->clients->detach($conn);
+                  }
+              
+                  public function onError(ConnectionInterface $conn, \Exception $e) {
+                      $conn->close();
+                  }
+              }
+              
+              // Run server
+              $app = new Ratchet\App('localhost', 8080);
+              $app->route('/chat', new Chat);
+              $app->run();</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Best Practices -->
+                  <div class="alert alert-warning mt-4">
+                    <h4>
+                      <i class="bi bi-exclamation-triangle"></i> Best Practices:
+                    </h4>
+                    <ul>
+                      <li>
+                        Gunakan <code>wss://</code> untuk koneksi aman (HTTPS)
+                      </li>
+                      <li>
+                        Implementasi <strong>reconnect logic</strong> untuk
+                        koneksi yang terputus
+                      </li>
+                      <li>
+                        Gunakan <strong>heartbeat/ping-pong</strong> untuk
+                        memantau koneksi
+                      </li>
+                      <li>Format data sebagai JSON untuk pesan kompleks</li>
+                      <li>Batas ukuran pesan untuk menghindari DoS</li>
+                      <li>
+                        Gunakan <strong>compression</strong> untuk data besar
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Alternatif -->
+                  <div class="card mb-4 border-info">
+                    <div class="card-header bg-info text-white">
+                      <h5>
+                        <i class="bi bi-arrow-left-right"></i> Alternatif
+                        WebSocket
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded h-100">
+                            <h6>Server-Sent Events (SSE)</h6>
+                            <p>Komunikasi satu arah dari server ke client:</p>
+                            <pre><code class="language-javascript">
+const eventSource = new EventSource('/updates');
+eventSource.onmessage = (e) => {
+    console.log(e.data);
+};
+            </code></pre>
+                            <p class="small">
+                              Cocok untuk notifikasi real-time sederhana.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded h-100">
+                            <h6>Long Polling</h6>
+                            <p>HTTP polling dengan koneksi tetap terbuka:</p>
+                            <pre><code class="language-javascript">
+function poll() {
+    fetch('/updates')
+    .then(response => response.json())
+    .then(data => {
+        process(data);
+        poll(); // Polling lagi
+    });
+}
+            </code></pre>
+                            <p class="small">
+                              Fallback ketika WebSocket tidak tersedia.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded h-100">
+                            <h6>Library Real-Time</h6>
+                            <p>Solusi high-level:</p>
+                            <ul>
+                              <li>
+                                <strong>Socket.IO</strong> - Fallback otomatis
+                              </li>
+                              <li><strong>SignalR</strong> - Untuk .NET</li>
+                              <li><strong>Firebase Realtime</strong> - BaaS</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Aplikasi Nyata -->
+                  <div class="card mt-4">
+                    <div class="card-header">
+                      <h5><i class="bi bi-stars"></i> Aplikasi Nyata</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded h-100">
+                            <h6>
+                              <i class="bi bi-chat-square-text"></i> Chat Apps
+                            </h6>
+                            <p>WhatsApp, Slack, Discord</p>
+                            <ul class="small">
+                              <li>Pesan instan</li>
+                              <li>Typing indicators</li>
+                              <li>Presence updates</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded h-100">
+                            <h6>
+                              <i class="bi bi-graph-up"></i> Financial Tickers
+                            </h6>
+                            <p>Update harga saham real-time</p>
+                            <ul class="small">
+                              <li>Harga terkini</li>
+                              <li>Notifikasi volatilitas</li>
+                              <li>Market depth</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded h-100">
+                            <h6>
+                              <i class="bi bi-controller"></i> Multiplayer Games
+                            </h6>
+                            <p>Game online real-time</p>
+                            <ul class="small">
+                              <li>Posisi pemain</li>
+                              <li>Aksi game</li>
+                              <li>Chat in-game</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"
+    integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Upgrade</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css"
+      integrity="sha512-/mZ1FHPkg6EKcxo0fKXF51ak6Cr2ocgDi5ytaTBjsQZIH/RNs6GF6+oId/vPe3eJB836T36nXwVh/WBl/cWT4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css"
+      integrity="sha512-kSwGoyIkfz4+hMo5jkJngSByil9jxJPKbweYec/UgS+S1EgE45qm4Gea7Ks2oxQ7qiYyyZRn66A9df2lMtjIsw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-6 col-lg-6 mx-auto mt-5">
+          <a href="index.html" class="btn btn-sm btn-success">Kembali</a>
+          <h1 class="text-center mb-4">
+            <i class="bi bi-palette"></i> Web Storage API
+          </h1>
+          <p class="text-center mb-4">
+            <strong>HTML5</strong> memperkenalkan API penyimpanan lokal yang
+            memungkinkan aplikasi web menyimpan data di browser pengguna.
+          </p>
+
+          <div class="accordion" id="storageAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="storageHeading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#storageCollapse"
+                  aria-expanded="true"
+                  aria-controls="storageCollapse"
+                >
+                  <i class="bi bi-device-hdd me-2"></i>
+                  <strong>5. Penyimpanan Lokal (Web Storage)</strong>
+                </button>
+              </h2>
+              <div
+                id="storageCollapse"
+                class="accordion-collapse collapse show"
+                aria-labelledby="storageHeading"
+                data-bs-parent="#storageAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Pengantar -->
+                  <div class="alert alert-info mb-4">
+                    <h4 class="alert-heading">
+                      <i class="bi bi-database"></i> Penyimpanan Client-Side
+                    </h4>
+                    <p>
+                      HTML5 memperkenalkan Web Storage API sebagai pengganti
+                      cookie yang lebih powerful untuk menyimpan data di browser
+                      pengguna.
+                    </p>
+                  </div>
+
+                  <!-- Perbandingan Storage -->
+                  <div class="card mb-4 border-primary">
+                    <div class="card-header bg-primary text-white">
+                      <h5>
+                        <i class="bi bi-layers-half"></i> Jenis Web Storage
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead class="table-light">
+                            <tr>
+                              <th>Fitur</th>
+                              <th>localStorage</th>
+                              <th>sessionStorage</th>
+                              <th>Cookies</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Kapasitas</td>
+                              <td>~5-10MB</td>
+                              <td>~5-10MB</td>
+                              <td>~4KB</td>
+                            </tr>
+                            <tr>
+                              <td>Durasi</td>
+                              <td>Permanen (sampai dihapus)</td>
+                              <td>Sesi browser/tab</td>
+                              <td>Bisa diset expiry</td>
+                            </tr>
+                            <tr>
+                              <td>Akses Server</td>
+                              <td>Tidak</td>
+                              <td>Tidak</td>
+                              <td>Ya (setiap request)</td>
+                            </tr>
+                            <tr>
+                              <td>Syntax</td>
+                              <td colspan="2">
+                                <code>setItem(), getItem()</code>
+                              </td>
+                              <td><code>document.cookie</code></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="mt-3 p-3 bg-light rounded">
+                        <h6>
+                          <i class="bi bi-lightbulb"></i> Kapan Menggunakan:
+                        </h6>
+                        <ul>
+                          <li>
+                            <strong>localStorage</strong>: Penyimpanan
+                            preferensi user, data aplikasi offline
+                          </li>
+                          <li>
+                            <strong>sessionStorage</strong>: Data sementara
+                            selama sesi browsing
+                          </li>
+                          <li>
+                            <strong>Cookies</strong>: Autentikasi dan data kecil
+                            yang perlu diakses server
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- localStorage -->
+                  <div class="card mb-4 border-success">
+                    <div class="card-header bg-success text-white">
+                      <h5><i class="bi bi-archive"></i> localStorage</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Operasi Dasar:</h6>
+                          <pre><code class="language-javascript">
+// Menyimpan data
+localStorage.setItem('nama', 'John Doe');
+localStorage.setItem('umur', 30);
+
+// Membaca data
+const nama = localStorage.getItem('nama');
+const umur = localStorage.getItem('umur');
+
+// Menghapus data
+localStorage.removeItem('nama');
+
+// Menghapus semua
+localStorage.clear();
+        </code></pre>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Demo Interaktif:</h6>
+                          <div class="mb-3">
+                            <label class="form-label">Key:</label>
+                            <input
+                              type="text"
+                              id="storageKey"
+                              class="form-control"
+                              placeholder="pref_theme"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Value:</label>
+                            <input
+                              type="text"
+                              id="storageValue"
+                              class="form-control"
+                              placeholder="dark"
+                            />
+                          </div>
+                          <div class="btn-group">
+                            <button
+                              onclick="saveToLocalStorage()"
+                              class="btn btn-sm btn-success"
+                            >
+                              <i class="bi bi-save"></i> Simpan
+                            </button>
+                            <button
+                              onclick="readFromLocalStorage()"
+                              class="btn btn-sm btn-primary"
+                            >
+                              <i class="bi bi-eye"></i> Baca
+                            </button>
+                            <button
+                              onclick="clearLocalStorage()"
+                              class="btn btn-sm btn-danger"
+                            >
+                              <i class="bi bi-trash"></i> Hapus
+                            </button>
+                          </div>
+                          <div
+                            id="storageResult"
+                            class="mt-2 p-2 border rounded"
+                          ></div>
+                          <script>
+                            function saveToLocalStorage() {
+                              const key =
+                                document.getElementById("storageKey").value;
+                              const value =
+                                document.getElementById("storageValue").value;
+                              localStorage.setItem(key, value);
+                              alert(`Data disimpan: ${key} = ${value}`);
+                            }
+
+                            function readFromLocalStorage() {
+                              const key =
+                                document.getElementById("storageKey").value;
+                              const value = localStorage.getItem(key);
+                              const result =
+                                document.getElementById("storageResult");
+                              result.innerHTML = value
+                                ? `<strong>${key}:</strong> ${value}`
+                                : `Data tidak ditemukan untuk key '${key}'`;
+                            }
+
+                            function clearLocalStorage() {
+                              const key =
+                                document.getElementById("storageKey").value;
+                              if (key) {
+                                localStorage.removeItem(key);
+                                alert(`Data dihapus: ${key}`);
+                              } else {
+                                localStorage.clear();
+                                alert("Semua data localStorage dihapus");
+                              }
+                              document.getElementById(
+                                "storageResult"
+                              ).innerHTML = "";
+                            }
+                          </script>
+                        </div>
+                      </div>
+
+                      <div class="mt-4">
+                        <h6><i class="bi bi-gear"></i> Penyimpanan Objek:</h6>
+                        <pre><code class="language-javascript">
+// Menyimpan objek
+const user = { nama: 'John', id: 123 };
+localStorage.setItem('user', JSON.stringify(user));
+
+// Membaca objek
+const savedUser = JSON.parse(localStorage.getItem('user'));
+        </code></pre>
+                        <div class="alert alert-warning mt-2">
+                          <i class="bi bi-exclamation-triangle"></i>
+                          localStorage hanya menyimpan string. Gunakan
+                          <code>JSON.stringify()</code> dan
+                          <code>JSON.parse()</code> untuk objek.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- sessionStorage -->
+                  <div class="card mb-4 border-warning">
+                    <div class="card-header bg-warning text-dark">
+                      <h5>
+                        <i class="bi bi-hourglass-split"></i> sessionStorage
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Karakteristik:</h6>
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              Data bertahan selama
+                              <strong>sesi browser/tab</strong>
+                            </li>
+                            <li class="list-group-item">
+                              Data hilang saat tab ditutup
+                            </li>
+                            <li class="list-group-item">
+                              Syntax sama dengan localStorage
+                            </li>
+                            <li class="list-group-item">
+                              Cocok untuk data sementara
+                            </li>
+                          </ul>
+                          <div class="mt-3">
+                            <h6>Contoh Penggunaan:</h6>
+                            <pre><code class="language-javascript">
+// Menyimpan data sementara
+sessionStorage.setItem('token', 'abc123xyz');
+
+// Mendapatkan data
+const token = sessionStorage.getItem('token');
+        </code></pre>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Demo Sesi:</h6>
+                          <div class="p-3 border rounded">
+                            <p>Buka tab baru dan coba baca data ini:</p>
+                            <button
+                              onclick="saveToSession()"
+                              class="btn btn-sm btn-warning mb-2"
+                            >
+                              Simpan Data Sesi
+                            </button>
+                            <button
+                              onclick="readFromSession()"
+                              class="btn btn-sm btn-info"
+                            >
+                              Baca Data Sesi
+                            </button>
+                            <div
+                              id="sessionResult"
+                              class="mt-2 p-2 bg-light rounded"
+                            ></div>
+                            <script>
+                              function saveToSession() {
+                                sessionStorage.setItem(
+                                  "demo_session",
+                                  "Data ini hanya untuk sesi ini"
+                                );
+                                alert("Data disimpan di sessionStorage");
+                              }
+
+                              function readFromSession() {
+                                const data =
+                                  sessionStorage.getItem("demo_session");
+                                const result =
+                                  document.getElementById("sessionResult");
+                                result.innerHTML =
+                                  data || "Tidak ada data sesi";
+                              }
+                            </script>
+                          </div>
+                          <div class="alert alert-info mt-3">
+                            <i class="bi bi-info-circle"></i> Coba buka tab baru
+                            dan baca data - data tidak akan tersedia di tab
+                            lain.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- IndexedDB -->
+                  <div class="card mb-4 border-danger">
+                    <div class="card-header bg-danger text-white">
+                      <h5><i class="bi bi-database"></i> IndexedDB</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Konsep Dasar:</h6>
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              Database NoSQL client-side
+                            </li>
+                            <li class="list-group-item">
+                              Kapasitas besar (~50MB+ tergantung browser)
+                            </li>
+                            <li class="list-group-item">
+                              Mendukung transaksi dan indexing
+                            </li>
+                            <li class="list-group-item">
+                              API lebih kompleks tapi lebih powerful
+                            </li>
+                          </ul>
+
+                          <div class="mt-3">
+                            <h6>Kapan Menggunakan:</h6>
+                            <ul>
+                              <li>Aplikasi offline kompleks</li>
+                              <li>Penyimpanan data terstruktur</li>
+                              <li>Ketika butuh query kompleks</li>
+                              <li>Untuk data besar di client</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Contoh Kode:</h6>
+                          <pre><code class="language-javascript">
+                            // Membuka database
+const request = indexedDB.open('MyDatabase', 1);
+
+request.onupgradeneeded = (event) => {
+  const db = event.target.result;
+  const store = db.createObjectStore('users', { keyPath: 'id' });
+  store.createIndex('nama', 'nama', { unique: false });
+};
+
+request.onsuccess = (event) => {
+  const db = event.target.result;
+  const tx = db.transaction('users', 'readwrite');
+  const store = tx.objectStore('users');
+  
+  // Menambahkan data
+  store.add({ id: 1, nama: 'John', email: 'john@example.com' });
+};
+        </code></pre>
+                          <div class="alert alert-info mt-2">
+                            <i class="bi bi-info-circle"></i> Gunakan library
+                            seperti <strong>Dexie.js</strong> untuk
+                            menyederhanakan IndexedDB.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Best Practices -->
+                  <div class="alert alert-warning mt-4">
+                    <h4>
+                      <i class="bi bi-exclamation-triangle"></i> Best Practices:
+                    </h4>
+                    <ul>
+                      <li>
+                        Gunakan <strong>try-catch</strong> karena storage bisa
+                        penuh atau diblokir
+                      </li>
+                      <li>Hindari menyimpan data sensitif (password, dll)</li>
+                      <li>Bersihkan data yang tidak perlu secara berkala</li>
+                      <li>
+                        Untuk data kompleks, pertimbangkan
+                        <strong>IndexedDB</strong>
+                      </li>
+                      <li>
+                        Selalu beri prefix pada key (misal: 'myapp_settings')
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Aplikasi Real World -->
+                  <div class="card mt-4">
+                    <div class="card-header">
+                      <h5>
+                        <i class="bi bi-globe"></i> Aplikasi di Dunia Nyata
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded">
+                            <h6><i class="bi bi-palette"></i> Tema Aplikasi</h6>
+                            <p>
+                              Simpan preferensi tema (light/dark mode) di
+                              localStorage
+                            </p>
+                            <button
+                              onclick="toggleTheme()"
+                              class="btn btn-sm btn-outline-dark"
+                            >
+                              Toggle Theme
+                            </button>
+                            <script>
+                              function toggleTheme() {
+                                const currentTheme =
+                                  localStorage.getItem("theme") || "light";
+                                const newTheme =
+                                  currentTheme === "light" ? "dark" : "light";
+                                localStorage.setItem("theme", newTheme);
+                                document.documentElement.setAttribute(
+                                  "data-bs-theme",
+                                  newTheme
+                                );
+                                alert(`Tema diubah ke ${newTheme}`);
+                              }
+
+                              // Init theme
+                              const savedTheme = localStorage.getItem("theme");
+                              if (savedTheme) {
+                                document.documentElement.setAttribute(
+                                  "data-bs-theme",
+                                  savedTheme
+                                );
+                              }
+                            </script>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded">
+                            <h6>
+                              <i class="bi bi-cart"></i> Keranjang Belanja
+                            </h6>
+                            <p>
+                              Simpan item keranjang sementara di sessionStorage
+                            </p>
+                            <button
+                              onclick="addToCart()"
+                              class="btn btn-sm btn-outline-primary"
+                            >
+                              Tambah Item
+                            </button>
+                            <script>
+                              function addToCart() {
+                                const cart =
+                                  JSON.parse(sessionStorage.getItem("cart")) ||
+                                  [];
+                                cart.push(`Item ${cart.length + 1}`);
+                                sessionStorage.setItem(
+                                  "cart",
+                                  JSON.stringify(cart)
+                                );
+                                alert(`${cart.length} item di keranjang`);
+                              }
+                            </script>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded">
+                            <h6>
+                              <i class="bi bi-file-earmark-text"></i> Draft Form
+                            </h6>
+                            <p>Auto-save draft form ke localStorage</p>
+                            <textarea
+                              id="draftText"
+                              class="form-control mb-2"
+                              placeholder="Ketik disini..."
+                              oninput="saveDraft()"
+                            ></textarea>
+                            <button
+                              onclick="clearDraft()"
+                              class="btn btn-sm btn-outline-danger"
+                            >
+                              Hapus Draft
+                            </button>
+                            <script>
+                              // Load draft
+                              const draft = localStorage.getItem("draft");
+                              if (draft) {
+                                document.getElementById("draftText").value =
+                                  draft;
+                              }
+
+                              function saveDraft() {
+                                const text =
+                                  document.getElementById("draftText").value;
+                                localStorage.setItem("draft", text);
+                              }
+
+                              function clearDraft() {
+                                localStorage.removeItem("draft");
+                                document.getElementById("draftText").value = "";
+                              }
+                            </script>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"
+    integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>

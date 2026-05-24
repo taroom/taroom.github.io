@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag n Drop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css"
+      integrity="sha512-/mZ1FHPkg6EKcxo0fKXF51ak6Cr2ocgDi5ytaTBjsQZIH/RNs6GF6+oId/vPe3eJB836T36nXwVh/WBl/cWT4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css"
+      integrity="sha512-kSwGoyIkfz4+hMo5jkJngSByil9jxJPKbweYec/UgS+S1EgE45qm4Gea7Ks2oxQ7qiYyyZRn66A9df2lMtjIsw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-6 col-lg-6 mx-auto mt-5">
+          <a href="index.html" class="btn btn-sm btn-success">Kembali</a>
+          <h1 class="text-center mb-4">
+            <i class="bi bi-palette"></i> Drag And Drop API
+          </h1>
+          <p class="text-center mb-4">
+            <strong>HTML5</strong> memperkenalkan Drag and Drop API yang
+            memungkinkan elemen untuk di-drag (diseret) dan di-drop (dilepas)
+            dengan event JavaScript native. API ini sangat berguna untuk
+            interaksi pengguna yang lebih baik, seperti mengatur ulang elemen,
+            mengunggah file, dan membuat antarmuka yang lebih interaktif.
+          </p>
+
+          <div class="accordion" id="dragDropAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="dragDropHeading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#dragDropCollapse"
+                  aria-expanded="true"
+                  aria-controls="dragDropCollapse"
+                >
+                  <i class="bi bi-arrows-move me-2"></i>
+                  <strong>7. Drag and Drop API</strong>
+                </button>
+              </h2>
+              <div
+                id="dragDropCollapse"
+                class="accordion-collapse collapse show"
+                aria-labelledby="dragDropHeading"
+                data-bs-parent="#dragDropAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Pengantar -->
+                  <div class="alert alert-info mb-4">
+                    <h4 class="alert-heading">
+                      <i class="bi bi-hand-index-thumb"></i> Interaksi Drag and
+                      Drop
+                    </h4>
+                    <p>
+                      HTML5 Drag and Drop API memungkinkan elemen untuk di-drag
+                      (diseret) dan di-drop (dilepas) dengan event JavaScript
+                      native.
+                    </p>
+                  </div>
+
+                  <!-- Dasar Drag and Drop -->
+                  <div class="card mb-4 border-primary">
+                    <div class="card-header bg-primary text-white">
+                      <h5><i class="bi bi-gear"></i> Dasar Penggunaan</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Langkah Implementasi:</h6>
+                          <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                              Set elemen sebagai <code>draggable="true"</code>
+                            </li>
+                            <li class="list-group-item">
+                              Tambahkan event listener <code>dragstart</code>
+                            </li>
+                            <li class="list-group-item">
+                              Tentukan zona drop dengan
+                              <code>dragover</code> dan <code>drop</code>
+                            </li>
+                            <li class="list-group-item">
+                              Atur transfer data dengan
+                              <code>DataTransfer</code>
+                            </li>
+                          </ol>
+
+                          <div class="mt-3">
+                            <h6>Event Penting:</h6>
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <strong>dragstart</strong>: Saat mulai drag
+                              </li>
+                              <li class="list-group-item">
+                                <strong>dragend</strong>: Saat drag berakhir
+                              </li>
+                              <li class="list-group-item">
+                                <strong>dragover</strong>: Saat elemen di atas
+                                zona drop
+                              </li>
+                              <li class="list-group-item">
+                                <strong>drop</strong>: Saat elemen di-drop
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Contoh Kode Dasar:</h6>
+                          <pre><code class="language-html">&lt;!-- Elemen yang bisa di-drag --&gt;
+          &lt;div id="dragItem" draggable="true"&gt;Drag me!&lt;/div&gt;
+          
+          &lt;!-- Zona drop --&gt;
+          &lt;div id="dropZone"&gt;Drop here&lt;/div&gt;
+          
+          &lt;script&gt;
+            const dragItem = document.getElementById('dragItem');
+            const dropZone = document.getElementById('dropZone');
+          
+            // Saat mulai drag
+            dragItem.addEventListener('dragstart', (e) => {
+              e.dataTransfer.setData('text/plain', dragItem.id);
+            });
+          
+            // Izinkan drop
+            dropZone.addEventListener('dragover', (e) => {
+              e.preventDefault();
+            });
+          
+            // Handle drop
+            dropZone.addEventListener('drop', (e) => {
+              e.preventDefault();
+              const id = e.dataTransfer.getData('text/plain');
+              const draggedItem = document.getElementById(id);
+              dropZone.appendChild(draggedItem);
+            });
+          &lt;/script&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Demo Interaktif -->
+                  <div class="card mb-4 border-success">
+                    <div class="card-header bg-success text-white">
+                      <h5><i class="bi bi-play-circle"></i> Demo Interaktif</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Drag Items:</h6>
+                          <div
+                            id="dragContainer"
+                            class="border rounded p-3 mb-3"
+                            style="min-height: 150px"
+                          >
+                            <div
+                              class="drag-item bg-primary text-white p-2 mb-2"
+                              draggable="true"
+                              id="item1"
+                            >
+                              Item 1
+                            </div>
+                            <div
+                              class="drag-item bg-success text-white p-2 mb-2"
+                              draggable="true"
+                              id="item2"
+                            >
+                              Item 2
+                            </div>
+                            <div
+                              class="drag-item bg-danger text-white p-2"
+                              draggable="true"
+                              id="item3"
+                            >
+                              Item 3
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Drop Zone:</h6>
+                          <div
+                            id="dropContainer"
+                            class="border rounded p-3 bg-light"
+                            style="min-height: 150px"
+                          >
+                            <p class="text-muted text-center mt-5">
+                              Drop items here
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-3 text-center">
+                        <button
+                          id="resetBtn"
+                          class="btn btn-sm btn-outline-secondary"
+                        >
+                          <i class="bi bi-arrow-counterclockwise"></i> Reset
+                        </button>
+                      </div>
+
+                      <script>
+                        // Setup drag and drop
+                        document
+                          .querySelectorAll(".drag-item")
+                          .forEach((item) => {
+                            item.addEventListener("dragstart", function (e) {
+                              e.dataTransfer.setData("text/plain", e.target.id);
+                              e.target.classList.add("dragging");
+                            });
+
+                            item.addEventListener("dragend", function () {
+                              this.classList.remove("dragging");
+                            });
+                          });
+
+                        const dropZone =
+                          document.getElementById("dropContainer");
+
+                        dropZone.addEventListener("dragover", function (e) {
+                          e.preventDefault();
+                          this.classList.add("drop-over");
+                        });
+
+                        dropZone.addEventListener("dragleave", function () {
+                          this.classList.remove("drop-over");
+                        });
+
+                        dropZone.addEventListener("drop", function (e) {
+                          e.preventDefault();
+                          this.classList.remove("drop-over");
+
+                          const id = e.dataTransfer.getData("text/plain");
+                          const draggedItem = document.getElementById(id);
+
+                          // Cek jika item sudah ada di drop zone
+                          if (!this.contains(draggedItem)) {
+                            this.appendChild(draggedItem);
+                            this.querySelector(".text-muted")?.remove();
+                          }
+                        });
+
+                        // Reset button
+                        document
+                          .getElementById("resetBtn")
+                          .addEventListener("click", function () {
+                            const dragContainer =
+                              document.getElementById("dragContainer");
+                            const dropContainer =
+                              document.getElementById("dropContainer");
+
+                            // Kembalikan semua item
+                            document
+                              .querySelectorAll(".drag-item")
+                              .forEach((item) => {
+                                dragContainer.appendChild(item);
+                              });
+
+                            // Tambahkan placeholder jika kosong
+                            if (!dropContainer.querySelector(".drag-item")) {
+                              dropContainer.innerHTML =
+                                '<p class="text-muted text-center mt-5">Drop items here</p>';
+                            }
+                          });
+                      </script>
+
+                      <style>
+                        .drag-item {
+                          cursor: move;
+                          transition: opacity 0.2s;
+                        }
+                        .drag-item.dragging {
+                          opacity: 0.5;
+                        }
+                        .drop-over {
+                          background-color: #e9ffe9 !important;
+                          border: 2px dashed green !important;
+                        }
+                      </style>
+                    </div>
+                  </div>
+
+                  <!-- DataTransfer -->
+                  <div class="card mb-4 border-warning">
+                    <div class="card-header bg-warning text-dark">
+                      <h5>
+                        <i class="bi bi-clipboard-data"></i> DataTransfer Object
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Metode Utama:</h6>
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <code>setData(format, data)</code> - Menyimpan
+                              data
+                            </li>
+                            <li class="list-group-item">
+                              <code>getData(format)</code> - Mengambil data
+                            </li>
+                            <li class="list-group-item">
+                              <code>clearData()</code> - Menghapus data
+                            </li>
+                            <li class="list-group-item">
+                              <code>setDragImage(element, x, y)</code> - Custom
+                              drag image
+                            </li>
+                          </ul>
+
+                          <div class="mt-3">
+                            <h6>Format Data:</h6>
+                            <ul>
+                              <li><code>text/plain</code></li>
+                              <li><code>text/html</code></li>
+                              <li><code>text/uri-list</code></li>
+                              <li><code>application/json</code></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h6>Contoh Transfer Data Kompleks:</h6>
+                          <pre><code class="language-javascript">// Saat dragstart
+          dragItem.addEventListener('dragstart', (e) => {
+            // Transfer berbagai jenis data
+            e.dataTransfer.setData('text/plain', 'Ini teks biasa');
+            e.dataTransfer.setData('text/html', '&lt;strong&gt;Ini HTML&lt;/strong&gt;');
+            e.dataTransfer.setData('application/json', JSON.stringify({id: 123, name: 'Item'}));
+            
+            // Set custom drag image
+            const dragIcon = document.createElement('div');
+            dragIcon.textContent = '📦';
+            document.body.appendChild(dragIcon);
+            e.dataTransfer.setDragImage(dragIcon, 10, 10);
+            setTimeout(() => document.body.removeChild(dragIcon), 0);
+          });
+          
+          // Saat drop
+          dropZone.addEventListener('drop', (e) => {
+            const plainText = e.dataTransfer.getData('text/plain');
+            const html = e.dataTransfer.getData('text/html');
+            const json = JSON.parse(e.dataTransfer.getData('application/json'));
+          });</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Aplikasi Lanjutan -->
+                  <div class="card mb-4 border-danger">
+                    <div class="card-header bg-danger text-white">
+                      <h5>
+                        <i class="bi bi-lightning-charge"></i> Aplikasi Lanjutan
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h6>Drag and Drop File:</h6>
+                          <div
+                            id="fileDropZone"
+                            class="border rounded p-5 text-center bg-light"
+                          >
+                            <p>
+                              <i
+                                class="bi bi-cloud-arrow-up"
+                                style="font-size: 2rem"
+                              ></i>
+                            </p>
+                            <p>Drag file ke sini</p>
+                            <small class="text-muted"
+                              >Atau klik untuk memilih file</small
+                            >
+                            <input type="file" id="fileInput" class="d-none" />
+                          </div>
+                          <div id="filePreview" class="mt-2"></div>
+
+                          <script>
+                            const fileDropZone =
+                              document.getElementById("fileDropZone");
+                            const fileInput =
+                              document.getElementById("fileInput");
+
+                            // Handle drag over
+                            fileDropZone.addEventListener("dragover", (e) => {
+                              e.preventDefault();
+                              fileDropZone.classList.add(
+                                "bg-info",
+                                "bg-opacity-10"
+                              );
+                            });
+
+                            // Handle drag leave
+                            fileDropZone.addEventListener("dragleave", () => {
+                              fileDropZone.classList.remove(
+                                "bg-info",
+                                "bg-opacity-10"
+                              );
+                            });
+
+                            // Handle drop
+                            fileDropZone.addEventListener("drop", (e) => {
+                              e.preventDefault();
+                              fileDropZone.classList.remove(
+                                "bg-info",
+                                "bg-opacity-10"
+                              );
+
+                              const files = e.dataTransfer.files;
+                              handleFiles(files);
+                            });
+
+                            // Click to select files
+                            fileDropZone.addEventListener("click", () => {
+                              fileInput.click();
+                            });
+
+                            fileInput.addEventListener("change", () => {
+                              handleFiles(fileInput.files);
+                            });
+
+                            function handleFiles(files) {
+                              const preview =
+                                document.getElementById("filePreview");
+                              preview.innerHTML = "";
+
+                              if (files.length > 0) {
+                                fileDropZone.innerHTML = `
+                                  <p class="mb-1"><i class="bi bi-check-circle text-success"></i></p>
+                                  <p>${files.length} file dipilih</p>
+                                `;
+
+                                for (let i = 0; i < files.length; i++) {
+                                  const file = files[i];
+                                  const fileElement =
+                                    document.createElement("div");
+                                  fileElement.className =
+                                    "border rounded p-2 mb-2 small";
+                                  fileElement.innerHTML = `
+                                    <strong>${
+                                      file.name
+                                    }</strong> (${formatFileSize(file.size)})
+                                    <div class="progress mt-1" style="height: 5px;">
+                                      <div class="progress-bar" style="width: 0%"></div>
+                                    </div>
+                                  `;
+                                  preview.appendChild(fileElement);
+
+                                  // Simulasi upload
+                                  simulateUpload(fileElement);
+                                }
+                              }
+                            }
+
+                            function formatFileSize(bytes) {
+                              if (bytes === 0) return "0 Bytes";
+                              const k = 1024;
+                              const sizes = ["Bytes", "KB", "MB", "GB"];
+                              const i = Math.floor(
+                                Math.log(bytes) / Math.log(k)
+                              );
+                              return (
+                                parseFloat(
+                                  (bytes / Math.pow(k, i)).toFixed(2)
+                                ) +
+                                " " +
+                                sizes[i]
+                              );
+                            }
+
+                            function simulateUpload(element) {
+                              const progressBar =
+                                element.querySelector(".progress-bar");
+                              let progress = 0;
+                              const interval = setInterval(() => {
+                                progress += Math.random() * 10;
+                                if (progress >= 100) {
+                                  progress = 100;
+                                  clearInterval(interval);
+                                }
+                                progressBar.style.width = `${progress}%`;
+                              }, 200);
+                            }
+                          </script>
+                        </div>
+
+                        <div class="col-md-6">
+                          <h6>Sortable List:</h6>
+                          <ul id="sortableList" class="list-group">
+                            <li class="list-group-item" draggable="true">
+                              Item 1
+                            </li>
+                            <li class="list-group-item" draggable="true">
+                              Item 2
+                            </li>
+                            <li class="list-group-item" draggable="true">
+                              Item 3
+                            </li>
+                            <li class="list-group-item" draggable="true">
+                              Item 4
+                            </li>
+                            <li class="list-group-item" draggable="true">
+                              Item 5
+                            </li>
+                          </ul>
+
+                          <script>
+                            const sortableList =
+                              document.getElementById("sortableList");
+                            let draggedItem = null;
+
+                            sortableList
+                              .querySelectorAll("li")
+                              .forEach((item) => {
+                                item.addEventListener("dragstart", function () {
+                                  draggedItem = this;
+                                  setTimeout(
+                                    () => this.classList.add("dragging"),
+                                    0
+                                  );
+                                });
+
+                                item.addEventListener("dragend", function () {
+                                  this.classList.remove("dragging");
+                                });
+                              });
+
+                            sortableList.addEventListener("dragover", (e) => {
+                              e.preventDefault();
+                              const afterElement = getDragAfterElement(
+                                sortableList,
+                                e.clientY
+                              );
+                              if (afterElement == null) {
+                                sortableList.appendChild(draggedItem);
+                              } else {
+                                sortableList.insertBefore(
+                                  draggedItem,
+                                  afterElement
+                                );
+                              }
+                            });
+
+                            function getDragAfterElement(container, y) {
+                              const draggableElements = [
+                                ...container.querySelectorAll(
+                                  "li:not(.dragging)"
+                                ),
+                              ];
+
+                              return draggableElements.reduce(
+                                (closest, child) => {
+                                  const box = child.getBoundingClientRect();
+                                  const offset = y - box.top - box.height / 2;
+                                  if (offset < 0 && offset > closest.offset) {
+                                    return { offset: offset, element: child };
+                                  } else {
+                                    return closest;
+                                  }
+                                },
+                                { offset: Number.NEGATIVE_INFINITY }
+                              ).element;
+                            }
+                          </script>
+
+                          <style>
+                            #sortableList li.dragging {
+                              opacity: 0.5;
+                              background: #f8f9fa;
+                            }
+                            #sortableList li {
+                              cursor: move;
+                              transition: background 0.2s;
+                            }
+                            #sortableList li:hover {
+                              background: #f8f9fa;
+                            }
+                          </style>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Best Practices -->
+                  <div class="alert alert-warning mt-4">
+                    <h4>
+                      <i class="bi bi-exclamation-triangle"></i> Best Practices:
+                    </h4>
+                    <ul>
+                      <li>
+                        Selalu berikan <strong>visual feedback</strong> saat
+                        dragging (ubah cursor, opacity, dll)
+                      </li>
+                      <li>
+                        Gunakan <strong>preventDefault()</strong> pada event
+                        dragover dan drop
+                      </li>
+                      <li>
+                        Untuk kompleksitas tinggi, pertimbangkan library seperti
+                        <strong>SortableJS</strong> atau
+                        <strong>Draggable</strong>
+                      </li>
+                      <li>
+                        Uji di berbagai browser karena implementasi bisa berbeda
+                      </li>
+                      <li>
+                        Pada mobile, tambahkan touch event untuk pengalaman yang
+                        lebih baik
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Library Populer -->
+                  <div class="card mt-4">
+                    <div class="card-header">
+                      <h5>
+                        <i class="bi bi-boxes"></i> Library Drag and Drop
+                        Populer
+                      </h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded">
+                            <h6>SortableJS</h6>
+                            <p>
+                              Library untuk membuat list yang bisa di-sort
+                              dengan drag and drop.
+                            </p>
+                            <pre><code class="language-javascript">new Sortable(listEl, {
+            animation: 150,
+            ghostClass: 'sortable-ghost'
+          });</code></pre>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded">
+                            <h6>Draggable</h6>
+                            <p>
+                              Library modular untuk fungsionalitas drag and drop
+                              yang kompleks.
+                            </p>
+                            <pre><code class="language-javascript">new Draggable(el, {
+            plugins: [SwapPlugin]
+          });</code></pre>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="p-3 border rounded">
+                            <h6>React DnD</h6>
+                            <p>Untuk aplikasi React dengan drag and drop.</p>
+                            <pre><code class="language-javascript">const [{isDragging}, drag] = useDrag({
+            type: 'BOX',
+            item: { id }
+          });</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"
+    integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>

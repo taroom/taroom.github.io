@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantik HTML</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-6 col-lg-6 mx-auto mt-5">
+          <a href="index.html" class="btn btn-sm btn-success">Kembali</a>
+          <h1 class="text-center mb-4">Struktur Semantik HTML5</h1>
+          <p class="text-center mb-4">
+            Memahami struktur semantik HTML5 untuk pengembangan web yang lebih
+            baik.
+          </p>
+
+          <div class="accordion" id="semanticAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="semanticHeading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#semanticCollapse"
+                  aria-expanded="true"
+                  aria-controls="semanticCollapse"
+                >
+                  <strong>1. Struktur Semantik HTML5</strong>
+                </button>
+              </h2>
+              <div
+                id="semanticCollapse"
+                class="accordion-collapse collapse show"
+                aria-labelledby="semanticHeading"
+                data-bs-parent="#semanticAccordion"
+              >
+                <div class="accordion-body">
+                  <!-- Pengantar -->
+                  <div class="alert alert-info mb-4">
+                    <h4 class="alert-heading">
+                      <i class="bi bi-lightbulb"></i> Apa itu Elemen Semantik?
+                    </h4>
+                    <p>
+                      Elemen semantik adalah elemen HTML yang secara jelas
+                      mendeskripsikan maknanya baik untuk browser maupun
+                      pengembang.
+                    </p>
+                  </div>
+
+                  <!-- Daftar Elemen -->
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card mb-3">
+                        <div class="card-header bg-primary text-white">
+                          <h5 class="mb-0">
+                            <i class="bi bi-layout-sidebar"></i> Header & Footer
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <pre><code class="language-html">&lt;header&gt;
+        &lt;!-- Konten kepala halaman --&gt;
+      &lt;/header&gt;
+      
+      &lt;footer&gt;
+        &lt;!-- Konten kaki halaman --&gt;
+      &lt;/footer&gt;</code></pre>
+                          <p class="mt-2">
+                            <small
+                              >Digunakan untuk mengelompokkan konten kepala dan
+                              kaki halaman.</small
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="card mb-3">
+                        <div class="card-header bg-primary text-white">
+                          <h5 class="mb-0">
+                            <i class="bi bi-compass"></i> Navigasi
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <pre><code class="language-html">&lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;</code></pre>
+                          <p class="mt-2">
+                            <small>Khusus untuk menu navigasi utama.</small>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-3">
+                    <div class="col-md-6">
+                      <div class="card mb-3">
+                        <div class="card-header bg-primary text-white">
+                          <h5 class="mb-0">
+                            <i class="bi bi-file-earmark-text"></i> Article &
+                            Section
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <pre><code class="language-html">&lt;article&gt;
+        &lt;h2&gt;Judul Artikel&lt;/h2&gt;
+        &lt;p&gt;Konten artikel...&lt;/p&gt;
+      &lt;/article&gt;
+      
+      &lt;section&gt;
+        &lt;h2&gt;Bagian 1&lt;/h2&gt;
+        &lt;p&gt;Konten bagian...&lt;/p&gt;
+      &lt;/section&gt;</code></pre>
+                          <p class="mt-2">
+                            <small
+                              ><code>&lt;article&gt;</code> untuk konten
+                              mandiri, <code>&lt;section&gt;</code> untuk
+                              pengelompokan tema.</small
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="card mb-3">
+                        <div class="card-header bg-primary text-white">
+                          <h5 class="mb-0">
+                            <i class="bi bi-layout-sidebar-reverse"></i> Aside &
+                            Main
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <pre><code class="language-html">&lt;main&gt;
+        &lt;!-- Konten utama --&gt;
+      &lt;/main&gt;
+      
+      &lt;aside&gt;
+        &lt;!-- Konten samping/sidebar --&gt;
+      &lt;/aside&gt;</code></pre>
+                          <p class="mt-2">
+                            <small
+                              ><code>&lt;main&gt;</code> untuk konten utama,
+                              <code>&lt;aside&gt;</code> untuk konten
+                              terkait.</small
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Manfaat -->
+                  <div class="mt-4 p-3 bg-light rounded">
+                    <h4>
+                      <i class="bi bi-check-circle"></i> Manfaat Struktur
+                      Semantik:
+                    </h4>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="bi bi-search text-primary"></i>
+                        <strong>SEO Lebih Baik</strong> - Mesin pencari lebih
+                        mudah memahami struktur konten
+                      </li>
+                      <li class="list-group-item">
+                        <i class="bi bi-eye text-primary"></i>
+                        <strong>Aksesibilitas</strong> - Screen reader dapat
+                        menavigasi halaman dengan lebih baik
+                      </li>
+                      <li class="list-group-item">
+                        <i class="bi bi-code-slash text-primary"></i>
+                        <strong>Kode Lebih Terorganisir</strong> - Memudahkan
+                        pengembangan dan maintenance
+                      </li>
+                      <li class="list-group-item">
+                        <i class="bi bi-phone text-primary"></i>
+                        <strong>Responsif</strong> - Mempermudah styling untuk
+                        berbagai perangkat
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Contoh Layout Lengkap -->
+                  <div class="mt-4">
+                    <h4>
+                      <i class="bi bi-layout-wtf"></i> Contoh Layout HTML5
+                      Semantik Lengkap:
+                    </h4>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+      &lt;html lang="id"&gt;
+      &lt;head&gt;
+          &lt;meta charset="UTF-8"&gt;
+          &lt;title&gt;Contoh Layout Semantik&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;header&gt;
+              &lt;h1&gt;Judul Situs&lt;/h1&gt;
+              &lt;nav&gt;...&lt;/nav&gt;
+          &lt;/header&gt;
+          
+          &lt;main&gt;
+              &lt;article&gt;
+                  &lt;h2&gt;Judul Artikel&lt;/h2&gt;
+                  &lt;section&gt;
+                      &lt;h3&gt;Bagian 1&lt;/h3&gt;
+                      &lt;p&gt;Konten...&lt;/p&gt;
+                  &lt;/section&gt;
+              &lt;/article&gt;
+              
+              &lt;aside&gt;
+                  &lt;h3&gt;Sidebar&lt;/h3&gt;
+                  &lt;p&gt;Informasi terkait...&lt;/p&gt;
+              &lt;/aside&gt;
+          &lt;/main&gt;
+          
+          &lt;footer&gt;
+              &lt;p&gt;Hak Cipta © 2023&lt;/p&gt;
+          &lt;/footer&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;</code></pre>
+                  </div>
+
+                  <!-- Best Practices -->
+                  <div class="alert alert-warning mt-4">
+                    <h4>
+                      <i class="bi bi-exclamation-triangle"></i> Best Practices:
+                    </h4>
+                    <ul>
+                      <li>
+                        Gunakan <code>&lt;main&gt;</code> hanya sekali per
+                        halaman
+                      </li>
+                      <li>
+                        Hindari nesting <code>&lt;article&gt;</code> di dalam
+                        <code>&lt;article&gt;</code>
+                      </li>
+                      <li>
+                        <code>&lt;section&gt;</code> harus selalu memiliki
+                        heading
+                      </li>
+                      <li>
+                        Kombinasikan dengan ARIA roles untuk aksesibilitas
+                        maksimal
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>
